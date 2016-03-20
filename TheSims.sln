@@ -1,0 +1,23 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{0A4F7854-96A5-BB87-9330-E689670B6A43}") = "TheSims", "Assembly-CSharp.csproj", "{EB418DC3-5005-A73C-0E68-B9782C3E15AD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EB418DC3-5005-A73C-0E68-B9782C3E15AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB418DC3-5005-A73C-0E68-B9782C3E15AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB418DC3-5005-A73C-0E68-B9782C3E15AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB418DC3-5005-A73C-0E68-B9782C3E15AD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
