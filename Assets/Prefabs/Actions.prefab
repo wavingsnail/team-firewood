@@ -32,6 +32,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &102576
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 400100}
+  - 114: {fileID: 11415050}
+  m_Layer: 0
+  m_Name: zDigForTreasureAction
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &109312
 GameObject:
   m_ObjectHideFlags: 0
@@ -223,6 +239,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &189162
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 402630}
+  - 114: {fileID: 11405808}
+  m_Layer: 0
+  m_Name: zDoPushupsAction
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &194712
 GameObject:
   m_ObjectHideFlags: 0
@@ -239,6 +271,30 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &400100
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 102576}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 467262}
+  m_RootOrder: 15
+--- !u!4 &402630
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 189162}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.5040524, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 467262}
+  m_RootOrder: 14
 --- !u!4 &403808
 Transform:
   m_ObjectHideFlags: 1
@@ -383,6 +439,8 @@ Transform:
   - {fileID: 403808}
   - {fileID: 435542}
   - {fileID: 432650}
+  - {fileID: 402630}
+  - {fileID: 400100}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &468366
@@ -433,6 +491,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 467262}
   m_RootOrder: 4
+--- !u!114 &11405808
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 189162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef698e1f76d624c4bb78a14f87700006, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cost: 1
+  workDuration: 0
+  resource: 9
+  amountToIncrement: 1
 --- !u!114 &11412580
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -452,6 +525,21 @@ MonoBehaviour:
   products:
   - item: 2
     amount: 2
+--- !u!114 &11415050
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 102576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b85aefff0b5044ab9b17738c333eb61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cost: 1
+  workDuration: 0
+  resource: 6
+  amountToTake: 1
 --- !u!114 &11416540
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -463,7 +551,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec886eef5ef35434797f05e364ed761e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 3
+  cost: 4
   workDuration: 2
   amountToHarvest: 2
   maxAmountToCarry: 8
