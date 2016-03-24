@@ -26,6 +26,7 @@ GameObject:
   - 4: {fileID: 462850}
   - 114: {fileID: 11466382}
   - 114: {fileID: 11489976}
+  - 114: {fileID: 11455610}
   m_Layer: 0
   m_Name: Creature
   m_TagString: Untagged
@@ -58,6 +59,19 @@ Transform:
   - {fileID: 461182}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &11455610
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 136786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c52dadeb2aac04ee69ec819889eec660, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _actionEffects: []
+  type: 11
 --- !u!114 &11466382
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -69,7 +83,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2f1f42492913d44e8bc77b125e1ffcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  availableActions: []
+  availableActions:
+  - {fileID: 0}
+  - {fileID: 0}
+  actionNames: []
+  actionSprites: []
   backpack: {fileID: 11489976}
   moveSpeed: 1
 --- !u!114 &11489976

@@ -18,7 +18,8 @@ namespace TeamFirewood {
 		Keys,
 		Strength,
 		Nirvana,
-		Mushrooms
+		Mushrooms, 
+		Part2
 	}
 
 	/// <summary>
@@ -44,6 +45,7 @@ namespace TeamFirewood {
 			{Item.Strength, 0},
 			{Item.Nirvana, 0},
 			{Item.Mushrooms, 0},
+			{Item.Part2, 0},
 			
 	    };
 
@@ -71,6 +73,8 @@ namespace TeamFirewood {
 		protected int nirvana;
 		[SerializeField]
 		protected int mushrooms;
+		[SerializeField]
+		protected int part2;
 
 
 	    protected void Awake() {
@@ -92,6 +96,7 @@ namespace TeamFirewood {
 			items[Item.Strength] = strength;
 			items[Item.Nirvana] = nirvana;
 			items[Item.Mushrooms] = mushrooms;
+			items[Item.Part2] = part2;
 	    }
 
 	#if DEBUG_CONTAINER
@@ -109,6 +114,7 @@ namespace TeamFirewood {
 			items[Item.Strength] = strength;
 			items[Item.Nirvana] = nirvana;
 			items[Item.Mushrooms] = mushrooms;
+			items[Item.Part2] = part2;
 	    }
 	#endif
 	}

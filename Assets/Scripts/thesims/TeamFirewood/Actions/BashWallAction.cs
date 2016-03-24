@@ -13,7 +13,7 @@ namespace TeamFirewood {
 			//       add all of the agent's items to the state of the target or
 			//       vice versa.
 			AddPrecondition(Item.Strength.ToString(), CompareType.MoreThanOrEqual, strengthRequired);	
-			AddEffect("inPart2", ModificationType.Set, true);
+			AddEffect(Item.Part2.ToString(), ModificationType.Set, true);
 		}
 
 		protected void Start() {
@@ -29,6 +29,9 @@ namespace TeamFirewood {
 		}
 
 		protected override bool OnDone(GoapAgent agent, WithContext context) {
+			// Done harvesting.
+			var backpack = agent.GetComponent<Container>();
+			backpack.items[Item.Part2] += 1;
 			return base.OnDone(agent, context);
 		}
 	}

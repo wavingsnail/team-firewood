@@ -8,7 +8,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 458744}
-  - 114: {fileID: 11491404}
+  - 114: {fileID: 11434714}
   m_Layer: 0
   m_Name: zMeditateAction
   m_TagString: Untagged
@@ -199,7 +199,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 466614}
-  - 114: {fileID: 11426902}
+  - 114: {fileID: 11419830}
   m_Layer: 0
   m_Name: zAskForAdvice
   m_TagString: Untagged
@@ -215,7 +215,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 498126}
-  - 114: {fileID: 11414342}
+  - 114: {fileID: 11457600}
   m_Layer: 0
   m_Name: zCollectMushroomsAction
   m_TagString: Untagged
@@ -718,22 +718,6 @@ MonoBehaviour:
   products:
   - item: 2
     amount: 2
---- !u!114 &11414342
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 149850}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b85aefff0b5044ab9b17738c333eb61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cost: 1
-  workDuration: 1
-  setStaticActionName: None
-  resource: 11
-  amountToTake: 1
 --- !u!114 &11415050
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -823,7 +807,7 @@ MonoBehaviour:
     amount: 1
   toolDamage: 0.1
   craftingStation: 2
---- !u!114 &11426902
+--- !u!114 &11419830
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -831,14 +815,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 140726}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b85aefff0b5044ab9b17738c333eb61, type: 3}
+  m_Script: {fileID: 11500000, guid: 14d8c22dc9edfe444bdc71d5e6aac403, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cost: 1
   workDuration: 1
   setStaticActionName: None
-  resource: 7
-  amountToTake: 1
+  resource: 12
+  harvestSource: 11
+  amountToCollect: 1
 --- !u!114 &11432046
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -888,6 +873,24 @@ MonoBehaviour:
   cost: 0.5
   workDuration: 0.1
   setStaticActionName: None
+--- !u!114 &11434714
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f458f4552203c44b9c099f9b9e613d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cost: 1
+  workDuration: 5
+  setStaticActionName: None
+  Achievement: 10
+  resource: 11
+  meditationPoint: 12
+  neededAmount: 10
 --- !u!114 &11437118
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -977,6 +980,23 @@ MonoBehaviour:
   workDuration: 0.1
   setStaticActionName: None
   itemToDrop: 2
+--- !u!114 &11457600
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 149850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14d8c22dc9edfe444bdc71d5e6aac403, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cost: 1
+  workDuration: 2
+  setStaticActionName: None
+  resource: 11
+  harvestSource: 13
+  amountToCollect: 1
 --- !u!114 &11474036
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1021,22 +1041,6 @@ MonoBehaviour:
   workDuration: 0.2
   setStaticActionName: None
   itemToDrop: 4
---- !u!114 &11491404
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100512}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b85aefff0b5044ab9b17738c333eb61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cost: 1
-  workDuration: 1
-  setStaticActionName: None
-  resource: 10
-  amountToTake: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

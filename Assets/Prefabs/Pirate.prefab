@@ -106,6 +106,7 @@ MonoBehaviour:
   strength: 0
   nirvana: 0
   mushrooms: 0
+  part2: 0
 --- !u!212 &21298108
 SpriteRenderer:
   m_ObjectHideFlags: 1
