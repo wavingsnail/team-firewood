@@ -9,11 +9,8 @@ namespace TeamFirewood {
 		private List<IStateful> targets;
 
 		protected void Awake() {
-			// TODO: Add a way to reference target state values in effects. For example,
-			//       add all of the agent's items to the state of the target or
-			//       vice versa.
 			AddPrecondition(Item.Strength.ToString(), CompareType.MoreThanOrEqual, strengthRequired);	
-			AddEffect(Item.Part2.ToString(), ModificationType.Set, true);
+			AddEffect(Item.Part2.ToString(), ModificationType.Add, 1);
 		}
 
 		protected void Start() {

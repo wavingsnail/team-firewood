@@ -235,12 +235,6 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 464264, guid: f091f385f0ab7d34aa7c604bbf209d92, type: 2}
   m_PrefabInternal: {fileID: 81801612}
---- !u!114 &98443692 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11419830, guid: 6d0b619b530a548d1839a19ae7bf5faf,
-    type: 2}
-  m_PrefabInternal: {fileID: 1613782016}
-  m_Script: {fileID: 11500000, guid: 14d8c22dc9edfe444bdc71d5e6aac403, type: 3}
 --- !u!4 &172204382 stripped
 Transform:
   m_PrefabParentObject: {fileID: 467262, guid: 6d0b619b530a548d1839a19ae7bf5faf, type: 2}
@@ -465,15 +459,11 @@ Prefab:
     - target: {fileID: 11465868, guid: 2b3e92b4c5a44d747894d6409deb295e, type: 2}
       propertyPath: availableActions.Array.data[4]
       value: 
-      objectReference: {fileID: 98443692}
+      objectReference: {fileID: 1613782022}
     - target: {fileID: 11465868, guid: 2b3e92b4c5a44d747894d6409deb295e, type: 2}
       propertyPath: availableActions.Array.data[5]
       value: 
       objectReference: {fileID: 1613782017}
-    - target: {fileID: 142894, guid: 2b3e92b4c5a44d747894d6409deb295e, type: 2}
-      propertyPath: m_Name
-      value: Pirate
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2b3e92b4c5a44d747894d6409deb295e, type: 2}
   m_IsPrefabParent: 0
@@ -1193,6 +1183,12 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1613782016}
   m_Script: {fileID: 11500000, guid: ef698e1f76d624c4bb78a14f87700006, type: 3}
+--- !u!114 &1613782022 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11425908, guid: 6d0b619b530a548d1839a19ae7bf5faf,
+    type: 2}
+  m_PrefabInternal: {fileID: 1613782016}
+  m_Script: {fileID: 11500000, guid: 7873a13bf1490b04f9819453e9361043, type: 3}
 --- !u!1001 &1619969610
 Prefab:
   m_ObjectHideFlags: 0
@@ -1255,7 +1251,7 @@ Prefab:
     - target: {fileID: 11465868, guid: 2b3e92b4c5a44d747894d6409deb295e, type: 2}
       propertyPath: availableActions.Array.data[4]
       value: 
-      objectReference: {fileID: 98443692}
+      objectReference: {fileID: 1613782022}
     - target: {fileID: 11465868, guid: 2b3e92b4c5a44d747894d6409deb295e, type: 2}
       propertyPath: availableActions.Array.data[5]
       value: 
@@ -1479,7 +1475,7 @@ Prefab:
     - target: {fileID: 11465868, guid: 2b3e92b4c5a44d747894d6409deb295e, type: 2}
       propertyPath: availableActions.Array.data[4]
       value: 
-      objectReference: {fileID: 98443692}
+      objectReference: {fileID: 1613782022}
     - target: {fileID: 11465868, guid: 2b3e92b4c5a44d747894d6409deb295e, type: 2}
       propertyPath: availableActions.Array.data[5]
       value: 

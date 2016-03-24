@@ -11,7 +11,7 @@ namespace TeamFirewood {
 			//       add all of the agent's items to the state of the target or
 			//       vice versa.
 			AddPrecondition(Item.Keys.ToString(), CompareType.Equal, true);	
-			AddEffect(Item.Part2.ToString(), ModificationType.Set, true);
+			AddEffect(Item.Part2.ToString(), ModificationType.Add, 1);
 		}
 
 		protected void Start() {

@@ -199,7 +199,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 466614}
-  - 114: {fileID: 11419830}
+  - 114: {fileID: 11425908}
   m_Layer: 0
   m_Name: zAskForAdvice
   m_TagString: Untagged
@@ -807,7 +807,7 @@ MonoBehaviour:
     amount: 1
   toolDamage: 0.1
   craftingStation: 2
---- !u!114 &11419830
+--- !u!114 &11425908
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -815,14 +815,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 140726}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14d8c22dc9edfe444bdc71d5e6aac403, type: 3}
+  m_Script: {fileID: 11500000, guid: 7873a13bf1490b04f9819453e9361043, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cost: 1
   workDuration: 1
   setStaticActionName: None
-  resource: 12
-  harvestSource: 11
+  required: 12
+  resource: 7
+  collectPOI: 11
   amountToCollect: 1
 --- !u!114 &11432046
 MonoBehaviour:
