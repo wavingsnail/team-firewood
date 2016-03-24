@@ -678,6 +678,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 1
   workDuration: 1
+  setStaticActionName: None
   item: 8
   whereToLook: 8
 --- !u!114 &11405808
@@ -693,7 +694,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 5
   workDuration: 2
+  setStaticActionName: pushups
   resource: 9
+  unlessHas: 08000000
   amountToIncrement: 1
 --- !u!114 &11412580
 MonoBehaviour:
@@ -708,6 +711,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 2
   workDuration: 0.1
+  setStaticActionName: None
   ingredients:
   - item: 5
     amount: 8
@@ -727,6 +731,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 1
   workDuration: 1
+  setStaticActionName: None
   resource: 11
   amountToTake: 1
 --- !u!114 &11415050
@@ -742,6 +747,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 1
   workDuration: 1
+  setStaticActionName: None
   resource: 6
   amountToTake: 1
 --- !u!114 &11416540
@@ -757,6 +763,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 4
   workDuration: 2
+  setStaticActionName: None
   amountToHarvest: 2
   maxAmountToCarry: 8
 --- !u!114 &11416696
@@ -772,6 +779,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 0.75
   workDuration: 0.15
+  setStaticActionName: None
   resource: 3
   amountToTake: 1
 --- !u!114 &11417930
@@ -787,6 +795,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 3
   workDuration: 3
+  setStaticActionName: None
   toolDamage: 0.5
   resource: 3
   harvestSource: 3
@@ -805,6 +814,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 1
   workDuration: 0.2
+  setStaticActionName: None
   ingredients:
   - item: 4
     amount: 1
@@ -826,6 +836,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 1
   workDuration: 1
+  setStaticActionName: None
   resource: 7
   amountToTake: 1
 --- !u!114 &11432046
@@ -841,6 +852,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 0.5
   workDuration: 0.1
+  setStaticActionName: None
   resource: 1
   amountToTake: 1
 --- !u!114 &11432252
@@ -856,6 +868,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 2
   workDuration: 2
+  setStaticActionName: None
   toolDamage: 0.34
   resource: 1
   harvestSource: 5
@@ -874,6 +887,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 0.5
   workDuration: 0.1
+  setStaticActionName: None
 --- !u!114 &11437118
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -887,6 +901,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 2
   workDuration: 2
+  setStaticActionName: None
   ingredients:
   - item: 3
     amount: 3
@@ -908,6 +923,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 1.5
   workDuration: 0.3
+  setStaticActionName: None
   itemToDrop: 3
 --- !u!114 &11449268
 MonoBehaviour:
@@ -922,6 +938,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 4
   workDuration: 4
+  setStaticActionName: None
   ingredients:
   - item: 1
     amount: 5
@@ -943,6 +960,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 0.5
   workDuration: 0.1
+  setStaticActionName: None
   itemToDrop: 1
 --- !u!114 &11456790
 MonoBehaviour:
@@ -957,6 +975,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 0.5
   workDuration: 0.1
+  setStaticActionName: None
   itemToDrop: 2
 --- !u!114 &11474036
 MonoBehaviour:
@@ -971,6 +990,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 1
   workDuration: 1
+  setStaticActionName: None
 --- !u!114 &11475618
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -984,6 +1004,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 1
   workDuration: 1
+  setStaticActionName: None
   strengthRequired: 5
 --- !u!114 &11489406
 MonoBehaviour:
@@ -998,6 +1019,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 1
   workDuration: 0.2
+  setStaticActionName: None
   itemToDrop: 4
 --- !u!114 &11491404
 MonoBehaviour:
@@ -1012,6 +1034,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 1
   workDuration: 1
+  setStaticActionName: None
   resource: 10
   amountToTake: 1
 --- !u!1001 &100100000

@@ -1781,6 +1781,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 142894, guid: 2b3e92b4c5a44d747894d6409deb295e, type: 2}
+      propertyPath: m_Name
+      value: Pirate (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 11465868, guid: 2b3e92b4c5a44d747894d6409deb295e, type: 2}
       propertyPath: availableActions.Array.data[0]
       value: 
@@ -1805,10 +1809,6 @@ Prefab:
       propertyPath: availableActions.Array.data[5]
       value: 
       objectReference: {fileID: 1613782017}
-    - target: {fileID: 142894, guid: 2b3e92b4c5a44d747894d6409deb295e, type: 2}
-      propertyPath: m_Name
-      value: Pirate (1)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2b3e92b4c5a44d747894d6409deb295e, type: 2}
   m_IsPrefabParent: 0

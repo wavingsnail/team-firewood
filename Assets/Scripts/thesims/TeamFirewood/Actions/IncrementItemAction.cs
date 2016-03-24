@@ -4,12 +4,19 @@ using Ai.Goap;
 namespace TeamFirewood {
 	public class IncrementItemAction : GoapAction {
 		public Item resource = Item.Strength;
+		public List<Item> unlessHas = null;
 		public int amountToIncrement;
 		private List<IStateful> targets;
 
 		protected virtual void Awake() {
 			//yoel: no preconditions or target effects for pushups.
+			if (unlessHas != null) {
+				foreach (Item item in unlessHas) {
+					AddPrecondition(item.ToString(), CompareType.Equal, false);	
+				}
+			}
 			AddEffect(resource.ToString(), ModificationType.Add, amountToIncrement);
+			base.Awake();
 		}
 
 		protected void Start() {

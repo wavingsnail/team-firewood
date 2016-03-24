@@ -11,7 +11,7 @@ namespace Ai.Goap {
  */
 public static class GoapPlanner {
     // This seems like enough...
-    private const int MAX_FRINGE_NODES = 2000;
+    private const int MAX_FRINGE_NODES = 5000;
 
     /// <summary>
     /// A* forward search for a plan that satisfies the given goal.
