@@ -24,7 +24,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 464264}
-  - 114: {fileID: 11415926}
+  - 114: {fileID: 11471366}
   m_Layer: 0
   m_Name: SandPile
   m_TagString: Untagged
@@ -57,7 +57,7 @@ Transform:
   - {fileID: 453754}
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &11415926
+--- !u!114 &11471366
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -65,11 +65,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 188626}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c52dadeb2aac04ee69ec819889eec660, type: 3}
+  m_Script: {fileID: 11500000, guid: dadba1e06002f7b4984ff386fea77a91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _actionEffects: []
   type: 8
+  possibleItemsInPile: 08000000
 --- !u!212 &21297904
 SpriteRenderer:
   m_ObjectHideFlags: 1

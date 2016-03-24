@@ -71,6 +71,7 @@
      <Compile Include="Assets\Scripts\thesims\TeamFirewood\Actions\OpenDoorAction.cs" />
      <Compile Include="Assets\Scripts\thesims\TeamFirewood\Actions\PickUpResourceAction.cs" />
      <Compile Include="Assets\Scripts\thesims\TeamFirewood\Actions\PickUpToolAction.cs" />
+     <Compile Include="Assets\Scripts\thesims\TeamFirewood\Actions\TryToFindAction.cs" />
      <Compile Include="Assets\Scripts\thesims\TeamFirewood\Branches.cs" />
      <Compile Include="Assets\Scripts\thesims\TeamFirewood\Container.cs" />
      <Compile Include="Assets\Scripts\thesims\TeamFirewood\Door.cs" />
@@ -85,6 +86,7 @@
      <Compile Include="Assets\Scripts\thesims\TeamFirewood\PassageToPart2.cs" />
      <Compile Include="Assets\Scripts\thesims\TeamFirewood\PointOfInterest.cs" />
      <Compile Include="Assets\Scripts\thesims\TeamFirewood\ToolComponent.cs" />
+     <Compile Include="Assets\Scripts\thesims\TeamFirewood\UnknownPile.cs" />
      <Compile Include="Assets\Scripts\thesims\TeamFirewood\Wall.cs" />
      <Compile Include="Assets\ThirdParty\PriorityQueue\FastPriorityQueue.cs" />
      <Compile Include="Assets\ThirdParty\PriorityQueue\FastPriorityQueueNode.cs" />

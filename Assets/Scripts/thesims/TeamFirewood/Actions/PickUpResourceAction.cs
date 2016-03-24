@@ -39,7 +39,7 @@ public class PickUpResourceAction : GoapAction {
         var backpack = agent.GetComponent<Container>();
         backpack.items[resource] += amountToTake;
         
-        return base.OnDone(agent, context);;
+        return base.OnDone(agent, context);
     }
 }
 }

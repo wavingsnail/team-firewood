@@ -103,7 +103,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 446034}
-  - 114: {fileID: 11434664}
+  - 114: {fileID: 11405754}
   m_Layer: 0
   m_Name: zDigForKey
   m_TagString: Untagged
@@ -665,6 +665,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 467262}
   m_RootOrder: 21
+--- !u!114 &11405754
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 114454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5abf0bf9b24ae834583f21841d9cbb30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cost: 1
+  workDuration: 1
+  item: 8
+  whereToLook: 8
 --- !u!114 &11405808
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -676,8 +691,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef698e1f76d624c4bb78a14f87700006, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 1
-  workDuration: 10000
+  cost: 5
+  workDuration: 2
   resource: 9
   amountToIncrement: 1
 --- !u!114 &11412580
@@ -859,21 +874,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 0.5
   workDuration: 0.1
---- !u!114 &11434664
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 114454}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b85aefff0b5044ab9b17738c333eb61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cost: 1
-  workDuration: 1
-  resource: 8
-  amountToTake: 1
 --- !u!114 &11437118
 MonoBehaviour:
   m_ObjectHideFlags: 1
