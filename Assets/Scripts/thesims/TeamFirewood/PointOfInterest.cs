@@ -10,7 +10,15 @@ public enum PointOfInterestType {
     SupplyPile,
     Tree,
     Branches,
-	Logger
+	Logger,
+	
+	//New POIs
+	DiggableGround, 
+	Door, 
+	BrickWall,
+	Creature, 
+	Mountain, 
+	MushroomsPile, 
 }
 
 public class PointOfInterest : ActionTarget {

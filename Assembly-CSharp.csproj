@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{EB418DC3-5005-A73C-0E68-B9782C3E15AD}</ProjectGuid>
+    <ProjectGuid>{9F08289B-EDB7-FDCC-D761-15E94FDF062E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -19,7 +19,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>Temp\bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;UNITY_5_3_3;UNITY_5_3;UNITY_5;ENABLE_NEW_BUGREPORTER;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_SPRITE_POLYGON;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_LOCALIZATION;ENABLE_ANDROID_ATLAS_ETC1_COMPRESSION;ENABLE_EDITOR_TESTS_RUNNER;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_TEXTUREID_MAP;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_LOG_MIXED_STACKTRACE;ENABLE_UNITYWEBREQUEST;ENABLE_EVENT_QUEUE;ENABLE_CLUSTERINPUT;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;DEBUG_PLAN;DEBUG_CONTAINER</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_3_4;UNITY_5_3;UNITY_5;ENABLE_NEW_BUGREPORTER;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_SPRITE_POLYGON;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_LOCALIZATION;ENABLE_ANDROID_ATLAS_ETC1_COMPRESSION;ENABLE_EDITOR_TESTS_RUNNER;UNITY_WEBPLAYER;ENABLE_SUBSTANCE;WEBPLUG;ENABLE_TEXTUREID_MAP;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_MONO;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
@@ -60,24 +60,32 @@
      <Compile Include="Assets\Scripts\thesims\AI\GOAP\IGoapAgent.cs" />
      <Compile Include="Assets\Scripts\thesims\AI\GOAP\IStateful.cs" />
      <Compile Include="Assets\Scripts\thesims\AI\GOAP\StateGoalAndEffects.cs" />
+     <Compile Include="Assets\Scripts\thesims\TeamFirewood\Actions\BashWallAction.cs" />
      <Compile Include="Assets\Scripts\thesims\TeamFirewood\Actions\BasicCraftItemAction.cs" />
      <Compile Include="Assets\Scripts\thesims\TeamFirewood\Actions\CollectBranches.cs" />
      <Compile Include="Assets\Scripts\thesims\TeamFirewood\Actions\CraftItemAction.cs" />
      <Compile Include="Assets\Scripts\thesims\TeamFirewood\Actions\DropOffItemAction.cs" />
      <Compile Include="Assets\Scripts\thesims\TeamFirewood\Actions\HarvestAction.cs" />
+     <Compile Include="Assets\Scripts\thesims\TeamFirewood\Actions\IncrementItemAction.cs" />
      <Compile Include="Assets\Scripts\thesims\TeamFirewood\Actions\MakeCampFire.cs" />
+     <Compile Include="Assets\Scripts\thesims\TeamFirewood\Actions\OpenDoorAction.cs" />
      <Compile Include="Assets\Scripts\thesims\TeamFirewood\Actions\PickUpResourceAction.cs" />
      <Compile Include="Assets\Scripts\thesims\TeamFirewood\Actions\PickUpToolAction.cs" />
      <Compile Include="Assets\Scripts\thesims\TeamFirewood\Branches.cs" />
      <Compile Include="Assets\Scripts\thesims\TeamFirewood\Container.cs" />
+     <Compile Include="Assets\Scripts\thesims\TeamFirewood\Door.cs" />
      <Compile Include="Assets\Scripts\thesims\TeamFirewood\HarvestPoint.cs" />
      <Compile Include="Assets\Scripts\thesims\TeamFirewood\Labourers\Blacksmith.cs" />
+     <Compile Include="Assets\Scripts\thesims\TeamFirewood\Labourers\Creature.cs" />
      <Compile Include="Assets\Scripts\thesims\TeamFirewood\Labourers\Logger.cs" />
      <Compile Include="Assets\Scripts\thesims\TeamFirewood\Labourers\Miner.cs" />
+     <Compile Include="Assets\Scripts\thesims\TeamFirewood\Labourers\Pirate.cs" />
      <Compile Include="Assets\Scripts\thesims\TeamFirewood\Labourers\WoodCutter.cs" />
      <Compile Include="Assets\Scripts\thesims\TeamFirewood\Labourers\Worker.cs" />
+     <Compile Include="Assets\Scripts\thesims\TeamFirewood\PassageToPart2.cs" />
      <Compile Include="Assets\Scripts\thesims\TeamFirewood\PointOfInterest.cs" />
      <Compile Include="Assets\Scripts\thesims\TeamFirewood\ToolComponent.cs" />
+     <Compile Include="Assets\Scripts\thesims\TeamFirewood\Wall.cs" />
      <Compile Include="Assets\ThirdParty\PriorityQueue\FastPriorityQueue.cs" />
      <Compile Include="Assets\ThirdParty\PriorityQueue\FastPriorityQueueNode.cs" />
      <Compile Include="Assets\ThirdParty\PriorityQueue\IPriorityQueue.cs" />
