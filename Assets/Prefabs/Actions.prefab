@@ -1,5 +1,21 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &100512
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 458744}
+  - 114: {fileID: 11491404}
+  m_Layer: 0
+  m_Name: zMeditateAction
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &100562
 GameObject:
   m_ObjectHideFlags: 0
@@ -58,6 +74,22 @@ GameObject:
   - 4: {fileID: 467262}
   m_Layer: 0
   m_Name: Actions
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &114434
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 468972}
+  - 114: {fileID: 11474036}
+  m_Layer: 0
+  m_Name: zOpenDoorAction
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -138,6 +170,22 @@ GameObject:
   - 114: {fileID: 11432046}
   m_Layer: 0
   m_Name: PickUpLogs
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &149850
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 498126}
+  - 114: {fileID: 11414342}
+  m_Layer: 0
+  m_Name: zCollectMushroomsAction
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -271,6 +319,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &196886
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 428356}
+  - 114: {fileID: 11475618}
+  m_Layer: 0
+  m_Name: zBashWallAction
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &400100
 Transform:
   m_ObjectHideFlags: 1
@@ -331,6 +395,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 467262}
   m_RootOrder: 2
+--- !u!4 &428356
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 196886}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 467262}
+  m_RootOrder: 17
 --- !u!4 &428652
 Transform:
   m_ObjectHideFlags: 1
@@ -415,6 +491,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 467262}
   m_RootOrder: 9
+--- !u!4 &458744
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100512}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 467262}
+  m_RootOrder: 16
 --- !u!4 &467262
 Transform:
   m_ObjectHideFlags: 1
@@ -441,6 +529,10 @@ Transform:
   - {fileID: 432650}
   - {fileID: 402630}
   - {fileID: 400100}
+  - {fileID: 458744}
+  - {fileID: 428356}
+  - {fileID: 468972}
+  - {fileID: 498126}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &468366
@@ -455,6 +547,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 467262}
   m_RootOrder: 5
+--- !u!4 &468972
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 114434}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 467262}
+  m_RootOrder: 18
 --- !u!4 &485288
 Transform:
   m_ObjectHideFlags: 1
@@ -491,6 +595,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 467262}
   m_RootOrder: 4
+--- !u!4 &498126
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 149850}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 467262}
+  m_RootOrder: 19
 --- !u!114 &11405808
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -525,6 +641,21 @@ MonoBehaviour:
   products:
   - item: 2
     amount: 2
+--- !u!114 &11414342
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 149850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b85aefff0b5044ab9b17738c333eb61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cost: 1
+  workDuration: 0
+  resource: 11
+  amountToTake: 1
 --- !u!114 &11415050
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -739,6 +870,33 @@ MonoBehaviour:
   cost: 0.5
   workDuration: 0.1
   itemToDrop: 2
+--- !u!114 &11474036
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 114434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c61eb818554cd64190ef517d4e21be4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cost: 1
+  workDuration: 0
+--- !u!114 &11475618
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 196886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea6ee0a8bd3763a4b93de57bbb29fa83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cost: 1
+  workDuration: 0
+  strengthRequired: 5
 --- !u!114 &11489406
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -753,6 +911,21 @@ MonoBehaviour:
   cost: 1
   workDuration: 0.2
   itemToDrop: 4
+--- !u!114 &11491404
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b85aefff0b5044ab9b17738c333eb61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cost: 1
+  workDuration: 0
+  resource: 10
+  amountToTake: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
