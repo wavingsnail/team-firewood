@@ -10,7 +10,12 @@ namespace TeamFirewood {
 			base.Awake();
 			var goal = new Goal();
 			//yoel: maybe this needs to be phrased differently (hasTool / hasTreasure / hasItem & greaterThan etc.)
-			goal["has" + Item.Treasure] = new Condition(CompareType.Equal, true);
+
+			//TODO: deete this goal: 
+			goal["inPart2"] = new Condition(CompareType.Equal, true);
+
+			//TODO: uncomment this goal:
+			//goal["has" + Item.Treasure] = new Condition(CompareType.Equal, true);
 			worldGoal[this] = goal;
 		}
 
