@@ -10,7 +10,7 @@ namespace TeamFirewood {
 			// TODO: Add a way to reference target state values in effects. For example,
 			//       add all of the agent's items to the state of the target or
 			//       vice versa.
-			AddPrecondition(Item.Keys.ToString(), CompareType.MoreThanOrEqual, 1);	
+			AddPrecondition(Item.Keys.ToString(), CompareType.Equal, true);	
 			AddEffect("inPart2", ModificationType.Set, true);
 		}
 

@@ -19,6 +19,14 @@ namespace TeamFirewood {
 			base.Awake();
 		}
 
+		public void removeItem (Item item){
+			state["has" + item] = new StateValue(false);
+		}
+
+		public void setSearched(bool searchedHere){
+			state ["searchedHere"] = new StateValue(searchedHere);
+		}
+
 		public override State GetState() {
 			// Enable to check again if has branches.
 			enabled = true;
