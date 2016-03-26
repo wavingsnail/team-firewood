@@ -41,7 +41,7 @@ namespace Ai.Goap
 			currentNode.Init (null, 0, goal, null, null);
 
 			openSet.Enqueue (currentNode, 0f);
-			Vector2 currentPosition = Vector2.zero;  //TODO: currentPosition in each Node
+			Vector2 currentPosition = Vector2.zero;  //TODO: currentPosition in each Node #omri
 		
 			while (openSet.Count > 0) {
 
