@@ -124,6 +124,15 @@ namespace Ai.Goap {
 	        return worldEffects;
 	    }
 
+		public virtual WorldEffects GetEffectsOnAgent(IStateful agent) {
+			var worldEffects = new WorldEffects();
+			if (effects.Count > 0) {
+				worldEffects[agent] = effects;
+			}
+			return worldEffects;
+		}
+
+
 	    [Serializable]
 	    public class WithContext {
 	        public static ObjectPool<WithContext> pool = new ObjectPool<WithContext>(100, 25);

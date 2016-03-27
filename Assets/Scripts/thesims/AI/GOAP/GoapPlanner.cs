@@ -30,7 +30,7 @@ namespace Ai.Goap
 			worldState [agent] = agent.GetState ();
 
 			DebugUtils.Assert (worldState [agent].ContainsKey ("x")
-			&& worldState [agent].ContainsKey ("x"),
+				&& worldState [agent].ContainsKey ("y"),
 				"Agent's state must contain his position as 'x' and 'y' keys");
 
 			var exploredNodes = new Dictionary<WorldState, Node> (WorldStateComparer.instance);
@@ -41,55 +41,130 @@ namespace Ai.Goap
 			currentNode.Init (null, 0, goal, null, null);
 
 			openSet.Enqueue (currentNode, 0f);
-			Vector2 currentPosition = Vector2.zero;  //TODO: currentPosition in each Node #omri
-		
+			Vector2 currentPosition = Vector2.zero;  //TODO: currentPosition in each Node #omri (left as is, position is calculated later)
+
+
 			while (openSet.Count > 0) {
 
 				currentNode = openSet.Dequeue ();
 
-				if (DoConditionsApplyToWorld (goal, agent.GetState ())) {
-					//TODO: Finished. return plan #yoel
+				if (DoConditionsApplyToWorld (currentNode.goal, currentNode.state)) {
+					//DebugUtils.LogError("Selected plan with cost: " + currentNode.Score);
+					var plan = UnwrapPlan(currentNode); // TODO check if unwrap plan is good for our needs
+					// Return all nodes.
+					Node.pool.ReturnAll();
+					WorldState.pool.Return(worldState);
+
+					// Check for leaks in the pools:
+					//DebugUtils.LogError("Nodes: " + Node.pool.Count);
+					//DebugUtils.LogError("WithContext: " + GoapAction.WithContext.pool.Count);
+					//DebugUtils.LogError("WorldState: " + WorldState.pool.Count);
+
+					return plan;
 				}
 
-				foreach (var precondition in currentNode.goal[agent]) { //do we need [agent] here?
+				foreach (Goal currGoal in currentNode.goal[agent]) {
+					
+					//ignore goals that are already satisfied
+					if (DoConditionsApply (currGoal, currentNode.state))
+						continue;
+
+					// TODO
+					// look for actions that meet unsatisfied conditions in the goal
+					// foreach action, open a node with an updated goal, which is it's preconditions after(?) the effect of this action
+					// update the WorldState to include the new starting position of the new elements we need to satisfy the goal (the WorldState will update with the next actions that will be taken)
+					// at the end of the procedure we should return No Plan (because base condition )
+					foreach (GoapAction action in availableActions) {
 
 
-					foreach (var action in availableActions) {
+//						//ignore actions that dont affect any of the goals
+//						bool isActionRelevant = false;
+//						foreach(string key in currGoal.Keys){
+//							if (action.GetEffectsOnAgent (agent).ContainsKey (key))
+//								isActionRelevant = true;
+//						}
+//						if (!isActionRelevant)
+//							continue;
 
-						if (DoConditionsApply (precondition, action.GetIndependentPreconditions ())) {
+						//if this actions moves us away from desired current goal - ignore it 
+						if(!action.GetEffectsOnAgent (agent).helpGoal(currGoal)){
+							continue;
+						}
 
 
-							// No targets, move to next action
-							if (action.GetAllTargets ().Count == 0) {
+						// No targets, move to next action
+						if (action.GetAllTargets ().Count == 0) {
+							continue;
+						}
+
+						IStateful closestTarget = null;
+						var travelCost = 0f; 
+						foreach (var target in action.GetAllTargets()) {
+							
+
+							// If cant go to this target right now, continue
+							if (!DoConditionsApply(action.GetDependentPreconditions(agent, target), target.GetState())) {
 								continue;
 							}
+								
+							//TODO: save only closest target
+							travelCost = 0f;
 
-							IStateful closestTarget = null;
-							foreach (var target in action.GetAllTargets()) {
-								//TODO: save onlu closest target #omri
-								closestTarget = target;
+							//new world state where:
+							//1. currGoal is solved
+							//2. reverse every action effect on agent
+							//3. starting position doesnt satisfy preconditions
+							//4. agent position
+
+
+
+							WorldState childState = ChangeWorldState (currentNode.state, action.GetDependentEffects (agent, target));
+
+							if (action.RequiresInRange ()) {
+								var obj = target as Component;
+								currentPosition.Set ((int)childState [agent] ["x"].value, (int)childState [agent] ["y"].value);
+								var travelVector = (Vector2)obj.transform.position - currentPosition;
+								travelCost = travelVector.magnitude;
+								var x = StateValue.NormalizeValue (obj.transform.position.x);
+								var y = StateValue.NormalizeValue (obj.transform.position.y);
+								childState [agent] ["x"] = new StateValue (x);
+								childState [agent] ["y"] = new StateValue (y);
+								//DebugUtils.LogError(travelCost + " to " + obj.name);
+
+								travelCost = 5f; //TODO: =magnitude
 							}
-
-							//Init (Node parent, float runningCost, WorldGoal goal, GoapAction action, IStateful target)
-							//TODO: calc tempRunningCost #yoel
-							//TODO: write function goalFromCondition(Condition precndition) #yoel
-							var tempRunningCost = currentNode.runningCost + 7f;
-							WorldGoal updatedWorldGoal = goalFromCondition (precondition);
-
-							//TODO: add cached nodes in exploredNodes #omri
-							// e.g. if(exploredNodes[???]){childNode = exploredNodes[???]}
-							Node childNode = new Node (currentNode, tempRunningCost, updatedWorldGoal, action, closestTarget);
-							openSet.Enqueue (childNode);
+							closestTarget = target < closestTarget ? target : closestTarget; // consider only the closest target of possible actions
 						}
+
+						//Init (Node parent, float runningCost, WorldGoal goal, GoapAction action, IStateful target)
+						//TODO: calc tempRunningCost #yoel
+						//TODO: write function goalFromCondition(Condition precndition) #yoel
+						var tempRunningCost = currentNode.runningCost + action.cost + travelCost;
+						WorldGoal updatedWorldGoal = GoalFromCondition (currGoal);
+
+						//TODO: add cached nodes in exploredNodes #omri (added the code from the original code)
+						// e.g. if(exploredNodes[???]){childNode = exploredNodes[???]}
+						Node childNode = new Node (currentNode, tempRunningCost, updatedWorldGoal, action, closestTarget);
+						exploredNodes [worldState] = childNode;
+						openSet.Enqueue (childNode);
+						
 					}
 
 
 
 				}
-		
+
 				//TODO: return plan failed #yoel
 
 			}
+		}
+
+		/// <summary>
+		/// Gets the closest target.
+		/// </summary>
+		/// <returns>The closest target.</returns>
+		private static IStateful GoalFromCondition(Condition condition) {
+			return;
 		}
 
 		/// <summary>
@@ -269,6 +344,7 @@ namespace Ai.Goap
 			public float runningCost;
 			public float cachedHeuristicCost = float.NegativeInfinity;
 			public WorldGoal goal;
+			public WorldState state;
 			public GoapAction.WithContext action = GoapAction.WithContext.pool.Borrow ();
 
 			public float Score {
@@ -277,11 +353,12 @@ namespace Ai.Goap
 				}
 			}
 
-			public void Init (Node parent, float runningCost, WorldGoal goal, GoapAction action, IStateful target)
+			public void Init (Node parent, float runningCost, WorldGoal goal, WorldState state, GoapAction action, IStateful target)
 			{
 				this.parent = parent;
 				this.runningCost = runningCost;
 				this.goal = goal;
+				this.state = state;
 				this.action.Init (target, action);
 			}
 
