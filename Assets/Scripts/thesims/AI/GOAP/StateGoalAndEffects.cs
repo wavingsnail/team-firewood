@@ -53,12 +53,13 @@ namespace Ai.Goap {
 				
 			case ModificationType.Set:
 				return new Condition (CompareType.Equal, cond.value);
-				break;
 			case ModificationType.Add:
 				return new Condition (cond.comparison, (float)cond.value + (float)this.value);
-				break;
+			default:
+				return cond; //TODO: check this edge case
 			}
 		}
+
 	}
 
 	public class StateValue {
@@ -220,8 +221,8 @@ namespace Ai.Goap {
 		public Goal applyEffectsToGoal(Goal goal){
 			Goal newGoal = (Goal)new Dictionary<string, Condition>(goal);
 			foreach (KeyValuePair<string, Condition> kvp in newGoal) {
-				if (this.ContainsKey (kvp [0])) {
-					newGoal [kvp [0]] = this [kvp [0]].applyEffectToCondition (goal[kvp[0]]);	
+				if (this.ContainsKey (kvp.Key)) {
+					newGoal [kvp.Key] = this [kvp.Key].applyEffectToCondition (goal[kvp.Key]);	
 				}
 			}
 			return newGoal;
