@@ -139,17 +139,17 @@ namespace Ai.Goap {
 		public bool isGoalCloser(WorldGoal currentGoal, WorldGoal possibleGoal){
 			bool res = false;
 
-			foreach (KeyValuePair<GoapAgent, Goal> agentGoal in possibleGoal) {
+			foreach (KeyValuePair<IStateful, Goal> agentGoal in possibleGoal) {
 
-				Goal possible = agentGoal [1];
-				if (currentGoal.ContainsKey (agentGoal [0])) {
-					Goal current = currentGoal [agentGoal [0]];
+				Goal possible = agentGoal.Value;
+				if (currentGoal.ContainsKey (agentGoal.Key)) {
+					Goal current = currentGoal [agentGoal.Key];
 
 					foreach (KeyValuePair<string, Condition> kvp in possible) {
-						if (this.ContainsKey (kvp [0]) && current.ContainsKey (kvp[0])) {
-							StateValue sv = this [kvp [0]];
-							Condition currCond = current [kvp [0]];
-							Condition possCond = kvp [1];
+						if (this.ContainsKey (kvp.Key) && current.ContainsKey (kvp.Key)) {
+							StateValue sv = this [kvp.Key];
+							Condition currCond = current [kvp.Key];
+							Condition possCond = kvp.Value;
 
 							//if int check if new closer to wanted
 							if (sv.value.GetType () == typeof(int)) {
@@ -166,22 +166,22 @@ namespace Ai.Goap {
 								//assume both goals have same compare type
 								switch(currCond.comparison){
 								case CompareType.Equal:
-									res = (Mathf.Abs(sv.value - currCond.value)) < (Mathf.Abs(sv.value - possCond.value));
+									res = (Mathf.Abs((float)sv.value - (float)currCond.value)) < (Mathf.Abs((float)sv.value - (float)possCond.value));
 									break;
 								case CompareType.LessThan:
-									res = (possCond.value - sv.value) < (currCond.value - sv.value);
+									res = ((float)possCond.value - (float)sv.value) < ((float)currCond.value - (float)sv.value);
 									break;
 								case CompareType.LessThanOrEqual:
-									res = (possCond.value - sv.value) <= (currCond.value - sv.value);
+									res = ((float)possCond.value - (float)sv.value) <= ((float)currCond.value - (float)sv.value);
 									break;
 								case CompareType.MoreThan:
-									res = (possCond.value - sv.value) > (currCond.value - sv.value);
+									res = ((float)possCond.value - (float)sv.value) > ((float)currCond.value - (float)sv.value);
 									break;
 								case CompareType.MoreThanOrEqual:
-									res = (possCond.value - sv.value) >= (currCond.value - sv.value);
+									res = ((float)possCond.value - (float)sv.value) >= ((float)currCond.value - (float)sv.value);
 									break;
 								case CompareType.NotEqual:
-									res = (Mathf.Abs(sv.value - currCond.value)) > (Mathf.Abs(sv.value - possCond.value));
+									res = (Mathf.Abs((float)sv.value - (float)currCond.value)) > (Mathf.Abs((float)sv.value - (float)possCond.value));
 									break;
 								}
 
