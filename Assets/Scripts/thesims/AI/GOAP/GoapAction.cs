@@ -134,13 +134,15 @@ namespace Ai.Goap {
 
 		public WorldGoal applyToWorldGoal(WorldGoal goal){
 
-			WorldGoal newGoal = new WorldGoal ();
+			WorldGoal newGoal = (WorldGoal) new Dictionary<IStateful, Goal> (goal);
 
 			foreach (KeyValuePair<IStateful, Goal> agentGoal in goal) {
 				GoapAgent currAgent = (GoapAgent)agentGoal.Key;
 				Goal currGoal = agentGoal.Value; 
 				newGoal [currAgent] = this.effects.applyEffectsToGoal (currGoal);
 			}
+
+			return newGoal;
 		}
 
 		/// <summary>
