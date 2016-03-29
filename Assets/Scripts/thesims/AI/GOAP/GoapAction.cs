@@ -132,6 +132,46 @@ namespace Ai.Goap {
 			return worldEffects;
 		}
 
+		public WorldGoal applyToWorldGoal(WorldGoal goal){
+
+			WorldGoal newGoal = new WorldGoal ();
+
+			foreach (KeyValuePair<GoapAgent, Goal> agentGoal in goal) {
+				GoapAgent currAgent = agentGoal [0];
+				Goal currGoal = GoapAgent [1]; 
+				newGoal [currAgent] = this.effects.applyEffectsToGoal (currGoal);
+			}
+		}
+
+		/// <summary>
+		/// Reverses the action.
+		/// </summary>
+		/// <returns>The action.</returns>
+		public GoapAction ReverseAction(){
+			GoapAction reversed;
+			reversed = this;
+
+			foreach (KeyValuePair<string, Effect> effect in reversed.effects) {
+				// TODO change to the opposite 
+				if (effect.Value.modifier == ModificationType.Add) {
+					effect.Value = Effect (ModificationType.Add, -effect.Value.value);
+				} else if (effect.Value.modifier == ModificationType.Set) {
+					effect.Value = Effect (ModificationType.Add, !effect.Value.value);
+				}
+			}
+
+			foreach (KeyValuePair<string, Effect> targetEffect in reversed.targetEffects) {
+				// TODO change to the opposite 
+				if (targetEffect.Value.modifier == ModificationType.Add) {
+					targetEffect.Value = Effect (ModificationType.Add, -targetEffect.Value.value);
+				} else if (targetEffect.Value.modifier == ModificationType.Set) {
+					targetEffect.Value = Effect (ModificationType.Add, !targetEffect.Value.value);
+				}
+			}
+
+			return reversed;
+		}
+
 
 	    [Serializable]
 	    public class WithContext {
@@ -161,6 +201,8 @@ namespace Ai.Goap {
 	            isInRange = false;
 	            isDone = false;
 	        }
+
+
 
 	        public WithContext Clone() {
 	            var clone = pool.Borrow();
@@ -197,5 +239,7 @@ namespace Ai.Goap {
 	            return true;
 	        }
 	    }
+
+
 	}
 }

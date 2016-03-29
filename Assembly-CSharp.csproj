@@ -62,7 +62,9 @@
      <Compile Include="Assets\Scripts\thesims\AI\GOAP\StateGoalAndEffects.cs" />
      <Compile Include="Assets\Scripts\thesims\TeamFirewood\Actions\BashWallAction.cs" />
      <Compile Include="Assets\Scripts\thesims\TeamFirewood\Actions\BasicCraftItemAction.cs" />
+     <Compile Include="Assets\Scripts\thesims\TeamFirewood\Actions\CollectAction.cs" />
      <Compile Include="Assets\Scripts\thesims\TeamFirewood\Actions\CollectBranches.cs" />
+     <Compile Include="Assets\Scripts\thesims\TeamFirewood\Actions\CollectWithPrecondition.cs" />
      <Compile Include="Assets\Scripts\thesims\TeamFirewood\Actions\CraftItemAction.cs" />
      <Compile Include="Assets\Scripts\thesims\TeamFirewood\Actions\DropOffItemAction.cs" />
      <Compile Include="Assets\Scripts\thesims\TeamFirewood\Actions\HarvestAction.cs" />
@@ -71,6 +73,7 @@
      <Compile Include="Assets\Scripts\thesims\TeamFirewood\Actions\OpenDoorAction.cs" />
      <Compile Include="Assets\Scripts\thesims\TeamFirewood\Actions\PickUpResourceAction.cs" />
      <Compile Include="Assets\Scripts\thesims\TeamFirewood\Actions\PickUpToolAction.cs" />
+     <Compile Include="Assets\Scripts\thesims\TeamFirewood\Actions\PrayAction.cs" />
      <Compile Include="Assets\Scripts\thesims\TeamFirewood\Actions\TryToFindAction.cs" />
      <Compile Include="Assets\Scripts\thesims\TeamFirewood\Branches.cs" />
      <Compile Include="Assets\Scripts\thesims\TeamFirewood\Container.cs" />
@@ -83,6 +86,7 @@
      <Compile Include="Assets\Scripts\thesims\TeamFirewood\Labourers\Pirate.cs" />
      <Compile Include="Assets\Scripts\thesims\TeamFirewood\Labourers\WoodCutter.cs" />
      <Compile Include="Assets\Scripts\thesims\TeamFirewood\Labourers\Worker.cs" />
+     <Compile Include="Assets\Scripts\thesims\TeamFirewood\MushroomsPile.cs" />
      <Compile Include="Assets\Scripts\thesims\TeamFirewood\PassageToPart2.cs" />
      <Compile Include="Assets\Scripts\thesims\TeamFirewood\PointOfInterest.cs" />
      <Compile Include="Assets\Scripts\thesims\TeamFirewood\ToolComponent.cs" />

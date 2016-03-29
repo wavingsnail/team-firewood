@@ -18,10 +18,6 @@ namespace Ai.Goap {
 	    Set,
 	    // Add is supported only for ints.
 	    Add,
-		
-		//New modifiers
-		Subtract, 
-		Truncate
 	}
 
 	/// <summary>
@@ -50,6 +46,19 @@ namespace Ai.Goap {
 	        this.modifier = modifier;
 	        this.value = StateValue.NormalizeValue(value);
 	    }
+
+		public Condition applyEffectToCondition(Condition cond){
+
+			switch(this.modifier){
+				
+			case ModificationType.Set:
+				return new Condition (CompareType.Equal, cond.value);
+				break;
+			case ModificationType.Add:
+				return new Condition (cond.comparison, cond.value + this.value);
+				break;
+			}
+		}
 	}
 
 	public class StateValue {
@@ -125,7 +134,81 @@ namespace Ai.Goap {
 	// TODO: Pool more stuff like we do with the WorldState and GoapAction.WithContext.
 	//       Be careful not to leak anything!
 
-	public class State : Dictionary<string, StateValue> {}
+	public class State : Dictionary<string, StateValue> {
+
+		public bool isGoalCloser(WorldGoal currentGoal, WorldGoal possibleGoal){
+			bool res = false;
+
+			foreach (KeyValuePair<GoapAgent, Goal> agentGoal in possibleGoal) {
+
+				Goal possible = agentGoal [1];
+				if (currentGoal.ContainsKey (agentGoal [0])) {
+					Goal current = currentGoal [agentGoal [0]];
+
+					foreach (KeyValuePair<string, Condition> kvp in possible) {
+						if (this.ContainsKey (kvp [0]) && current.ContainsKey (kvp[0])) {
+							StateValue sv = this [kvp [0]];
+							Condition currCond = current [kvp [0]];
+							Condition possCond = kvp [1];
+
+							//if int check if new closer to wanted
+							if (sv.value.GetType () == typeof(int)) {
+
+
+								if (sv.CheckCondition (currCond) && sv.CheckCondition (possCond)) {
+									continue;
+								}
+								if (sv.CheckCondition (currCond) && !sv.CheckCondition (possCond)) {
+									return false;
+								}
+
+								//now both conditions dont hold, check if possCond improves
+								//assume both goals have same compare type
+								switch(currCond.comparison){
+								case CompareType.Equal:
+									res = (Mathf.Abs(sv.value - currCond.value)) < (Mathf.Abs(sv.value - possCond.value));
+									break;
+								case CompareType.LessThan:
+									res = (possCond.value - sv.value) < (currCond.value - sv.value);
+									break;
+								case CompareType.LessThanOrEqual:
+									res = (possCond.value - sv.value) <= (currCond.value - sv.value);
+									break;
+								case CompareType.MoreThan:
+									res = (possCond.value - sv.value) > (currCond.value - sv.value);
+									break;
+								case CompareType.MoreThanOrEqual:
+									res = (possCond.value - sv.value) >= (currCond.value - sv.value);
+									break;
+								case CompareType.NotEqual:
+									res = (Mathf.Abs(sv.value - currCond.value)) > (Mathf.Abs(sv.value - possCond.value));
+									break;
+								}
+
+								//if bool check if new matches while old doesnt
+							} else if (sv.value.GetType () == typeof(bool)) {
+								//assuming booleans will only get ModificationType.Set
+								res = (sv.value != currCond.value && sv.value == possCond.value);
+							}
+
+							//if new cond worse - return false
+							if (res == false) {
+								return false;
+							}
+						}
+					}
+
+
+				} else {
+					continue;
+				}
+				
+			}
+
+
+			return res;
+		}
+	}
 
 	/// <summary>
 	/// A dictionary of stateful objects and their state.
@@ -141,7 +224,18 @@ namespace Ai.Goap {
 	/// </summary>
 	public class WorldGoal : Dictionary<IStateful, Goal> {}
 
-	public class Effects : Dictionary<string, Effect> {}
+	public class Effects : Dictionary<string, Effect> {
+
+		public Goal applyEffectsToGoal(Goal goal){
+			Goal newGoal = (Goal)new Dictionary<string, Condition>(goal);
+			foreach (KeyValuePair<string, Condition> kvp in newGoal) {
+				if (this.ContainsKey (kvp [0])) {
+					newGoal [kvp [0]] = this [kvp [0]].applyEffectToCondition (goal[kvp[0]]);	
+				}
+			}
+			return newGoal;
+		}
+	}
 
 	/// <summary>
 	/// A dictionary of stateful objects and how an action might change their state.
