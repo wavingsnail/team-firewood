@@ -55,7 +55,7 @@ namespace Ai.Goap {
 				return new Condition (CompareType.Equal, cond.value);
 				break;
 			case ModificationType.Add:
-				return new Condition (cond.comparison, cond.value + this.value);
+				return new Condition (cond.comparison, (float)cond.value + (float)this.value);
 				break;
 			}
 		}
@@ -89,16 +89,7 @@ namespace Ai.Goap {
 	            var v2 = (int)value;
 	            value = v2 + v1;
 	            break;
-			
-			//New effects
-			case ModificationType.Subtract:
-				var v3 = (int)e.value;
-				var v4 = (int)value;
-				value = v4 - v3;
-				break;
-			case ModificationType.Truncate:
-				value = 0;
-				break;
+
 	        }
 	    }
 

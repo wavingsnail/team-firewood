@@ -156,18 +156,18 @@ namespace Ai.Goap {
 			foreach (KeyValuePair<string, Effect> effect in reversed.effects) {
 				// TODO change to the opposite 
 				if (effect.Value.modifier == ModificationType.Add) {
-					effect.Value = Effect (ModificationType.Add, -effect.Value.value);
+					effect.Value = Effect (ModificationType.Add, -(float)effect.Value.value);
 				} else if (effect.Value.modifier == ModificationType.Set) {
-					effect.Value = Effect (ModificationType.Add, !effect.Value.value);
+					effect.Value = Effect (ModificationType.Add, !(bool)effect.Value.value);
 				}
 			}
 
 			foreach (KeyValuePair<string, Effect> targetEffect in reversed.targetEffects) {
 				// TODO change to the opposite 
 				if (targetEffect.Value.modifier == ModificationType.Add) {
-					targetEffect.Value = Effect (ModificationType.Add, -targetEffect.Value.value);
+					targetEffect.Value = Effect (ModificationType.Add, -(float)targetEffect.Value.value);
 				} else if (targetEffect.Value.modifier == ModificationType.Set) {
-					targetEffect.Value = Effect (ModificationType.Add, !targetEffect.Value.value);
+					targetEffect.Value = Effect (ModificationType.Add, !(bool)targetEffect.Value.value);
 				}
 			}
 
