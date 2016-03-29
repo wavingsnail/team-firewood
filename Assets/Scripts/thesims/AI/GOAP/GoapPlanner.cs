@@ -85,7 +85,7 @@ namespace Ai.Goap
 
 
 							//TODO: check target preconds, make sure this works
-							if (!DoConditionsApply (goal, target.GetState ())) {
+							if (!DoConditionsApply (goal[target], target.GetState ())) {
 								continue;
 							}
 

@@ -10,7 +10,7 @@ public class PickUpToolAction : GoapAction {
         AddPrecondition("hasTool", CompareType.Equal, false);
         AddEffect("hasTool", ModificationType.Set, true);
         AddTargetPrecondition(Item.NewTool.ToString(), CompareType.MoreThan, 0);	
-		AddTargetEffect(Item.NewTool.ToString(), ModificationType.Subtract, 1); //yoel: test subtract
+		AddTargetEffect(Item.NewTool.ToString(), ModificationType.Add, -1); //yoel: test subtract
     }
 
     protected void Start() {
