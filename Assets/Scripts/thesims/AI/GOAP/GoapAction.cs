@@ -136,9 +136,9 @@ namespace Ai.Goap {
 
 			WorldGoal newGoal = new WorldGoal ();
 
-			foreach (KeyValuePair<GoapAgent, Goal> agentGoal in goal) {
-				GoapAgent currAgent = agentGoal [0];
-				Goal currGoal = GoapAgent [1]; 
+			foreach (KeyValuePair<IStateful, Goal> agentGoal in goal) {
+				GoapAgent currAgent = (GoapAgent)agentGoal.Key;
+				Goal currGoal = agentGoal.Value; 
 				newGoal [currAgent] = this.effects.applyEffectsToGoal (currGoal);
 			}
 		}
