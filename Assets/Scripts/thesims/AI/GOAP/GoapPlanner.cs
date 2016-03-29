@@ -101,10 +101,12 @@ namespace Ai.Goap
 						openSet.Enqueue (newChiledNode, newChiledNode.runningCost);
 					}
 
-					//TODO: return plan failed #yoel
-					return null;
+
 				}
+
 			}
+			//TODO: return plan failed #yoel
+			return null;
 		}
 
 

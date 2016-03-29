@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using Infra;
 using Infra.Collections;
+using Infra.CustomUtils;
 
 namespace Ai.Goap {
 	public abstract class GoapAction : MonoBehaviour {
@@ -18,13 +19,13 @@ namespace Ai.Goap {
 
 	    private Goal preconditions = new Goal();
 	    private Goal targetPreconditions = new Goal();
-	    private readonly Effects effects = new Effects();
-	    private readonly Effects targetEffects = new Effects();
+	    public Effects effects = new Effects();
+	    public Effects targetEffects = new Effects();
 
 		protected void Awake(){
 			actionName = setStaticActionName;
 		}
-	
+			
 	    /// <summary>
 	    /// Default implementation returns the agent as the target.
 	    /// </summary>
@@ -150,24 +151,23 @@ namespace Ai.Goap {
 		/// </summary>
 		/// <returns>The action.</returns>
 		public GoapAction ReverseAction(){
-			GoapAction reversed;
-			reversed = this;
+			GoapAction reversed = ObjectCopier.Clone (this);
 
 			foreach (KeyValuePair<string, Effect> effect in reversed.effects) {
 				// TODO change to the opposite 
 				if (effect.Value.modifier == ModificationType.Add) {
-					effect.Value = Effect (ModificationType.Add, -(float)effect.Value.value);
+					reversed.effects[effect.Key] = new Effect (ModificationType.Add, -(float)effect.Value.value);
 				} else if (effect.Value.modifier == ModificationType.Set) {
-					effect.Value = Effect (ModificationType.Add, !(bool)effect.Value.value);
+					reversed.effects[effect.Key] = new Effect (ModificationType.Add, !(bool)effect.Value.value);
 				}
 			}
 
 			foreach (KeyValuePair<string, Effect> targetEffect in reversed.targetEffects) {
 				// TODO change to the opposite 
 				if (targetEffect.Value.modifier == ModificationType.Add) {
-					targetEffect.Value = Effect (ModificationType.Add, -(float)targetEffect.Value.value);
+					reversed.targetEffects[targetEffect.Key] = new Effect (ModificationType.Add, -(float)targetEffect.Value.value);
 				} else if (targetEffect.Value.modifier == ModificationType.Set) {
-					targetEffect.Value = Effect (ModificationType.Add, !(bool)targetEffect.Value.value);
+					reversed.targetEffects[targetEffect.Key] = new Effect (ModificationType.Add, !(bool)targetEffect.Value.value);
 				}
 			}
 
