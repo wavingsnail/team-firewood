@@ -20,7 +20,7 @@ namespace Ai.Goap
 		/// </summary>
 		/// <returns>Returns null if a plan could not be found, or a list of the
 		/// actions that must be performed, in order.</returns>
-		public static Queue<GoapAction.WithContext> RegressivePlan (
+		public static Queue<GoapAction.WithContext> Plan (
 			GoapAgent agent,
 			List<GoapAction> availableActions,
 			WorldGoal goal)
@@ -47,7 +47,7 @@ namespace Ai.Goap
 
 				currentNode = openSet.Dequeue ();
 
-				if (DoConditionsApplyToWorld (currentNode.goal, agent.GetState ())) {
+				if (DoConditionsApply (currentNode.goal[agent], agent.GetState ())) {
 					//DebugUtils.LogError("Selected plan with cost: " + currentNode.Score);
 					var plan = UnwrapPlan (currentNode); // TODO check if unwrap plan is good for our needs
 
@@ -72,14 +72,14 @@ namespace Ai.Goap
 
 
 						// No targets, move to next action
-						if (action.GetAllTargets ().Count == 0) {
+						if (action.GetAllTargets (agent).Count == 0) {
 							continue;
 						}
 
 
 						IStateful closestTarget = null;
 						float travelCost = 0f;
-						foreach (var target in action.GetAllTargets()) {
+						foreach (var target in action.GetAllTargets(agent)) {
 							//TODO: save only closest target #omri
 							closestTarget = target;
 
