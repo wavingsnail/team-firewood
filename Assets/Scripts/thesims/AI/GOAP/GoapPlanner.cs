@@ -107,14 +107,6 @@ namespace Ai.Goap
 			}
 		}
 
-		/// <summary>
-		/// Gets the closest target.
-		/// </summary>
-		/// <returns>The closest target.</returns>
-		private static IStateful GoalFromCondition (Condition condition)
-		{
-			return;
-		}
 
 		/// <summary>
 		/// Check that all items in 'test' are in 'state'. If just one does not
