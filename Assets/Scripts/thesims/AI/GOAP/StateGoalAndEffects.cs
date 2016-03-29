@@ -47,14 +47,14 @@ namespace Ai.Goap {
 	        this.value = StateValue.NormalizeValue(value);
 	    }
 
-		public Condition applyEffectToCondition(Condition cond){
+		public Condition reverseApplyEffectToCondition(Condition cond){
 
 			switch(this.modifier){
 				
 			case ModificationType.Set:
-				return new Condition (CompareType.Equal, cond.value);
+				return null; //it could have been anything before
 			case ModificationType.Add:
-				return new Condition (cond.comparison, (float)cond.value + (float)this.value);
+				return new Condition (cond.comparison, (int)cond.value - (int)this.value);
 			default:
 				return cond; //TODO: check this edge case
 			}
@@ -158,22 +158,28 @@ namespace Ai.Goap {
 								//assume both goals have same compare type
 								switch(currCond.comparison){
 								case CompareType.Equal:
-									res = (Mathf.Abs((float)sv.value - (float)currCond.value)) < (Mathf.Abs((float)sv.value - (float)possCond.value));
+									//Debug.Log ("Equal - sv.value: " + sv.value + ", possCond.value: " + possCond.value + ", currCond.value: " + currCond.value);
+									res = (Mathf.Abs((int)sv.value - (int)currCond.value)) < (Mathf.Abs((int)sv.value - (int)possCond.value));
 									break;
 								case CompareType.LessThan:
-									res = ((float)possCond.value - (float)sv.value) < ((float)currCond.value - (float)sv.value);
+									//Debug.Log ("LessThan - sv.value: " + sv.value + ", possCond.value: " + possCond.value + ", currCond.value: " + currCond.value);
+									res = ((int)possCond.value - (int)sv.value) < ((int)currCond.value - (int)sv.value);
 									break;
 								case CompareType.LessThanOrEqual:
-									res = ((float)possCond.value - (float)sv.value) <= ((float)currCond.value - (float)sv.value);
+									//Debug.Log ("LessThanOrEqual - sv.value: " + sv.value + ", possCond.value: " + possCond.value + ", currCond.value: " + currCond.value);
+									res = ((int)possCond.value - (int)sv.value) <= ((int)currCond.value - (int)sv.value);
 									break;
 								case CompareType.MoreThan:
-									res = ((float)possCond.value - (float)sv.value) > ((float)currCond.value - (float)sv.value);
+									//Debug.Log ("MoreThan - sv.value: " + sv.value + ", possCond.value: " + possCond.value + ", currCond.value: " + currCond.value);
+									res = ((int)possCond.value - (int)sv.value) > ((int)currCond.value - (int)sv.value);
 									break;
 								case CompareType.MoreThanOrEqual:
-									res = ((float)possCond.value - (float)sv.value) >= ((float)currCond.value - (float)sv.value);
+									//Debug.Log ("MoreThanOrEqual - sv.value: " + sv.value + ", possCond.value: " + possCond.value + ", currCond.value: " + currCond.value);
+									res = ((int)possCond.value - (int)sv.value) >= ((int)currCond.value - (int)sv.value);
 									break;
 								case CompareType.NotEqual:
-									res = (Mathf.Abs((float)sv.value - (float)currCond.value)) > (Mathf.Abs((float)sv.value - (float)possCond.value));
+									//Debug.Log ("NotEqual - sv.value: " + sv.value + ", possCond.value: " + possCond.value + ", currCond.value: " + currCond.value);
+									res = (Mathf.Abs((int)sv.value - (int)currCond.value)) > (Mathf.Abs((int)sv.value - (int)possCond.value));
 									break;
 								}
 
@@ -209,22 +215,48 @@ namespace Ai.Goap {
 	    public static ObjectPool<WorldState> pool = new ObjectPool<WorldState>(1, 1);
 	}
 
-	public class Goal : Dictionary<string, Condition> {}
+	public class Goal : Dictionary<string, Condition> {
+
+
+		public Goal(Goal other) : base(){
+			foreach (KeyValuePair<string, Condition> kvp in other) {
+				this.Add (kvp.Key, kvp.Value);
+			}
+
+		}
+
+		public Goal() : base(){
+		}
+
+	}
 
 	/// <summary>
 	/// A dictionary of stateful objects and the goal we want them to be at.
 	/// </summary>
-	public class WorldGoal : Dictionary<IStateful, Goal> {}
+	public class WorldGoal : Dictionary<IStateful, Goal> {
+
+		public WorldGoal (WorldGoal other) : base(){
+			foreach (KeyValuePair<IStateful, Goal> kvp in other) {
+				this.Add (kvp.Key, kvp.Value);
+			}
+		}
+
+		public WorldGoal () : base(){
+		}
+
+	}
 
 	public class Effects : Dictionary<string, Effect> {
 
-		public Goal applyEffectsToGoal(Goal goal){
-			Goal newGoal = (Goal)new Dictionary<string, Condition>(goal);
-			foreach (KeyValuePair<string, Condition> kvp in newGoal) {
-				if (this.ContainsKey (kvp.Key)) {
-					newGoal [kvp.Key] = this [kvp.Key].applyEffectToCondition (goal[kvp.Key]);	
+		public Goal reverseApplyEffectsToGoal(Goal goal){
+			Goal newGoal = new Goal (goal);
+			List<string> keys = new List<string> (newGoal.Keys);
+			foreach(string k in keys){
+				if (this.ContainsKey (k)) {
+					newGoal [k] = this [k].reverseApplyEffectToCondition (goal[k]);	
 				}
 			}
+
 			return newGoal;
 		}
 	}

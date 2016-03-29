@@ -28,9 +28,7 @@ namespace Ai.Goap
 			var worldState = WorldState.pool.Borrow ();
 			worldState.Clear ();
 
-			DebugUtils.Assert (worldState [agent].ContainsKey ("x")
-			&& worldState [agent].ContainsKey ("y"),
-				"Agent's state must contain his position as 'x' and 'y' keys");
+
 
 			var exploredNodes = new Dictionary<WorldState, Node> (WorldStateComparer.instance);
 			var closedSet = new HashSet<WorldState> (WorldStateComparer.instance);
@@ -65,8 +63,8 @@ namespace Ai.Goap
 
 				foreach (GoapAction action in availableActions) {
 					
-					GoapAction reverseAction = action.ReverseAction ();
-					WorldGoal possibleChildGoal = reverseAction.applyToWorldGoal (currentNode.goal);
+
+					WorldGoal possibleChildGoal = action.reverseApplyToWorldGoal (currentNode.goal);
 
 					if (agent.GetState ().isGoalCloser (currentNode.goal, possibleChildGoal)) {
 
@@ -85,8 +83,10 @@ namespace Ai.Goap
 
 
 							//TODO: check target preconds, make sure this works
-							if (!DoConditionsApply (goal[target], target.GetState ())) {
-								continue;
+							if(goal.ContainsKey(target)){
+								if (!DoConditionsApply (goal[target], target.GetState ())) {
+									continue;
+								}
 							}
 
 							if (action.RequiresInRange ()) {
@@ -106,7 +106,7 @@ namespace Ai.Goap
 
 			}
 			//TODO: return plan failed #yoel
-			return null;
+			return null;	
 		}
 
 
