@@ -1,0 +1,11 @@
+# git ls-files --others --exclude-from=.git/info/exclude
+
+# Untracked librarys:
+Library/
+obj/
+Temp/
+
+# Untracked config files
+Assembly-CSharp.csproj
+*.sln
+*.userprefs
