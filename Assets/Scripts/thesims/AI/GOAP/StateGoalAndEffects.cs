@@ -132,78 +132,89 @@ namespace Ai.Goap {
 			bool res = false;
 
 			foreach (KeyValuePair<IStateful, Goal> agentGoal in possibleGoal) {
-
 				Goal possible = agentGoal.Value;
-				if (currentGoal.ContainsKey (agentGoal.Key)) {
+
+				// TODO: what if possible goal doesnt contain this person
+				if (!currentGoal.ContainsKey (agentGoal.Key)) {
+					continue;
+				}
+				else{
 					Goal current = currentGoal [agentGoal.Key];
 
-					foreach (KeyValuePair<string, Condition> kvp in possible) {
-						if (this.ContainsKey (kvp.Key) && current.ContainsKey (kvp.Key)) {
-							StateValue sv = this [kvp.Key];
-							Condition currCond = current [kvp.Key];
-							Condition possCond = kvp.Value;
+					//go through parent node's conditions
+					foreach (KeyValuePair<string, Condition> kvp in currentGoal) {
 
-							//if int check if new closer to wanted
-							if (sv.value.GetType () == typeof(int)) {
+						// If initial state without this parameter, irrelevant and continue
+						if (!this.ContainsKey (kvp.Key)) {
+							Debug.LogError ("Agent initial state doesnt contain " + kvp.Key);
+						} 
+						else {
+							
+							// If child node doesnt contain this goal, it is satisfied!
+							if (!possibleGoal.ContainsKey (kvp.Key)) {
+								res = true;
+							} 
+
+							// Else - check if child goal is closer to inital state
+							else {
+								StateValue sv = this [kvp.Key];
+								Condition currCond = current [kvp.Key];
+								Condition possCond = kvp.Value;
+								//if int check if new closer to wanted
+								if (sv.value.GetType () == typeof(int)) {
 
 
-								if (sv.CheckCondition (currCond) && sv.CheckCondition (possCond)) {
-									continue;
+									if (sv.CheckCondition (currCond) && sv.CheckCondition (possCond)) {
+										continue;
+									}
+									if (sv.CheckCondition (currCond) && !sv.CheckCondition (possCond)) {
+										return false;
+									}
+
+									//now both conditions dont hold, check if possCond improves
+									//assume both goals have same compare type
+									switch(currCond.comparison){
+									case CompareType.Equal:
+										//Debug.Log ("Equal - sv.value: " + sv.value + ", possCond.value: " + possCond.value + ", currCond.value: " + currCond.value);
+										res = (Mathf.Abs((int)sv.value - (int)currCond.value)) < (Mathf.Abs((int)sv.value - (int)possCond.value));
+										break;
+									case CompareType.LessThan:
+										//Debug.Log ("LessThan - sv.value: " + sv.value + ", possCond.value: " + possCond.value + ", currCond.value: " + currCond.value);
+										res = ((int)possCond.value - (int)sv.value) < ((int)currCond.value - (int)sv.value);
+										break;
+									case CompareType.LessThanOrEqual:
+										//Debug.Log ("LessThanOrEqual - sv.value: " + sv.value + ", possCond.value: " + possCond.value + ", currCond.value: " + currCond.value);
+										res = ((int)possCond.value - (int)sv.value) <= ((int)currCond.value - (int)sv.value);
+										break;
+									case CompareType.MoreThan:
+										//Debug.Log ("MoreThan - sv.value: " + sv.value + ", possCond.value: " + possCond.value + ", currCond.value: " + currCond.value);
+										res = ((int)possCond.value - (int)sv.value) > ((int)currCond.value - (int)sv.value);
+										break;
+									case CompareType.MoreThanOrEqual:
+										//Debug.Log ("MoreThanOrEqual - sv.value: " + sv.value + ", possCond.value: " + possCond.value + ", currCond.value: " + currCond.value);
+										res = ((int)possCond.value - (int)sv.value) >= ((int)currCond.value - (int)sv.value);
+										break;
+									case CompareType.NotEqual:
+										//Debug.Log ("NotEqual - sv.value: " + sv.value + ", possCond.value: " + possCond.value + ", currCond.value: " + currCond.value);
+										res = (Mathf.Abs((int)sv.value - (int)currCond.value)) > (Mathf.Abs((int)sv.value - (int)possCond.value));
+										break;
+									}
+
+									//if bool check if new matches while old doesnt
+								} else if (sv.value.GetType () == typeof(bool)) {
+									//assuming booleans will only get ModificationType.Set
+									res = (sv.value != currCond.value && sv.value == possCond.value);
 								}
-								if (sv.CheckCondition (currCond) && !sv.CheckCondition (possCond)) {
+
+								//if new cond worse - return false
+								if (res == false) {
 									return false;
 								}
-
-								//now both conditions dont hold, check if possCond improves
-								//assume both goals have same compare type
-								switch(currCond.comparison){
-								case CompareType.Equal:
-									//Debug.Log ("Equal - sv.value: " + sv.value + ", possCond.value: " + possCond.value + ", currCond.value: " + currCond.value);
-									res = (Mathf.Abs((int)sv.value - (int)currCond.value)) < (Mathf.Abs((int)sv.value - (int)possCond.value));
-									break;
-								case CompareType.LessThan:
-									//Debug.Log ("LessThan - sv.value: " + sv.value + ", possCond.value: " + possCond.value + ", currCond.value: " + currCond.value);
-									res = ((int)possCond.value - (int)sv.value) < ((int)currCond.value - (int)sv.value);
-									break;
-								case CompareType.LessThanOrEqual:
-									//Debug.Log ("LessThanOrEqual - sv.value: " + sv.value + ", possCond.value: " + possCond.value + ", currCond.value: " + currCond.value);
-									res = ((int)possCond.value - (int)sv.value) <= ((int)currCond.value - (int)sv.value);
-									break;
-								case CompareType.MoreThan:
-									//Debug.Log ("MoreThan - sv.value: " + sv.value + ", possCond.value: " + possCond.value + ", currCond.value: " + currCond.value);
-									res = ((int)possCond.value - (int)sv.value) > ((int)currCond.value - (int)sv.value);
-									break;
-								case CompareType.MoreThanOrEqual:
-									//Debug.Log ("MoreThanOrEqual - sv.value: " + sv.value + ", possCond.value: " + possCond.value + ", currCond.value: " + currCond.value);
-									res = ((int)possCond.value - (int)sv.value) >= ((int)currCond.value - (int)sv.value);
-									break;
-								case CompareType.NotEqual:
-									//Debug.Log ("NotEqual - sv.value: " + sv.value + ", possCond.value: " + possCond.value + ", currCond.value: " + currCond.value);
-									res = (Mathf.Abs((int)sv.value - (int)currCond.value)) > (Mathf.Abs((int)sv.value - (int)possCond.value));
-									break;
-								}
-
-								//if bool check if new matches while old doesnt
-							} else if (sv.value.GetType () == typeof(bool)) {
-								//assuming booleans will only get ModificationType.Set
-								res = (sv.value != currCond.value && sv.value == possCond.value);
-							}
-
-							//if new cond worse - return false
-							if (res == false) {
-								return false;
 							}
 						}
 					}
-
-
-				} else {
-					continue;
-				}
-				
+				} 
 			}
-
-
 			return res;
 		}
 	}
