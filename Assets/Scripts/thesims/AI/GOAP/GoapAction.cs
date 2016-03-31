@@ -136,7 +136,7 @@ namespace Ai.Goap {
 
 		public WorldGoal reverseApplyToWorldGoal(WorldGoal goal){
 
-			WorldGoal newGoal = new WorldGoal (goal);
+			WorldGoal newGoal = new WorldGoal (goal); //this is deep copied, see c'tor
 
 			foreach (KeyValuePair<IStateful, Goal> agentGoal in goal) {
 				GoapAgent currAgent = (GoapAgent)agentGoal.Key;

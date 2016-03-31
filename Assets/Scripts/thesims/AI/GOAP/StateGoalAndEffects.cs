@@ -219,6 +219,15 @@ namespace Ai.Goap {
 
 		public static ObjectPool<Goal> pool = new ObjectPool<Goal>(1, 1);
 
+		public Goal (Goal other) : base(){
+			foreach (KeyValuePair<string, Condition> kvp in other) {
+				this.Add (kvp.Key, new Condition(kvp.Value.comparison, kvp.Value.value)); // For deep copy
+			}
+		}
+
+		public Goal () : base(){
+		}
+
 	}
 
 	/// <summary>
@@ -226,9 +235,12 @@ namespace Ai.Goap {
 	/// </summary>
 	public class WorldGoal : Dictionary<IStateful, Goal> {
 
+		public static ObjectPool<WorldGoal> pool = new ObjectPool<WorldGoal>(1, 1);
+
 		public WorldGoal (WorldGoal other) : base(){
 			foreach (KeyValuePair<IStateful, Goal> kvp in other) {
-				this.Add (kvp.Key, kvp.Value);
+				Goal goalCopy = new Goal (kvp.Value); // For deep copy
+				this.Add (kvp.Key, goalCopy);
 			}
 		}
 
