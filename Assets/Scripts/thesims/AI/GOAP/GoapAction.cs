@@ -133,7 +133,7 @@ namespace Ai.Goap {
 			return worldEffects;
 		}
 
-
+		// Create possible previous goal (before this actionwas made)
 		public WorldGoal reverseApplyToWorldGoal(WorldGoal goal){
 
 			WorldGoal newGoal = new WorldGoal (goal); //this is deep copied, see c'tor
@@ -145,6 +145,11 @@ namespace Ai.Goap {
 					newGoal [currAgent] = this.effects.reverseApplyEffectsToGoal (currGoal);
 				else
 					newGoal.Add (currAgent, this.effects.reverseApplyEffectsToGoal (currGoal));
+
+				// Add target preconditions to new goal
+				foreach (KeyValuePair<string, Condition> kvp in this.preconditions) {
+					newGoal [currAgent].Add (kvp.Key, new Condition (kvp.Value.comparison, kvp.Value.value));
+				}
 			}
 
 			return newGoal;
