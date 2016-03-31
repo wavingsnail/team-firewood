@@ -35,13 +35,13 @@ namespace Ai.Goap
 			var openSet = new FastPriorityQueue<Node> (MAX_FRINGE_NODES);
 
 			var currentNode = Node.pool.Borrow ();
-			currentNode.Init (null, 0, goal, null, null);
+			currentNode.Init (null, 0f, goal, null, null);
 
 			openSet.Enqueue (currentNode, 0f);
-			Vector2 currentPosition = Vector2.zero;  //TODO: currentPosition in each Node #omri (left as is, position is calculated later)
+			int iterations = 0;
 
-
-			while (openSet.Count > 0) {
+			while (openSet.Count > 0 && iterations < MAX_FRINGE_NODES-10) {
+				iterations++;
 
 				currentNode = openSet.Dequeue ();
 
@@ -82,6 +82,7 @@ namespace Ai.Goap
 							closestTarget = target;
 
 
+
 							//TODO: check target preconds, make sure this works
 							if(goal.ContainsKey(target)){
 								if (!DoConditionsApply (goal[target], target.GetState ())) {
@@ -100,8 +101,7 @@ namespace Ai.Goap
 						newChiledNode.Init (currentNode, cost, possibleChildGoal, action, closestTarget);
 						openSet.Enqueue (newChiledNode, newChiledNode.runningCost);
 					}
-
-
+						
 				}
 
 			}
@@ -141,6 +141,8 @@ namespace Ai.Goap
 			}
 			return true;
 		}
+
+
 
 		/// <summary>
 		/// Apply the stateChange to the currentState.
