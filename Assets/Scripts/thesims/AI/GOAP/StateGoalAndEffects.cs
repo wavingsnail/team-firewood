@@ -56,7 +56,7 @@ namespace Ai.Goap {
 			case ModificationType.Add:
 				return new Condition (cond.comparison, (int)cond.value - (int)this.value);
 			default:
-				return cond; //TODO: check this edge case
+				return null; //TODO: is this reachable?
 			}
 		}
 
@@ -217,16 +217,7 @@ namespace Ai.Goap {
 
 	public class Goal : Dictionary<string, Condition> {
 
-
-		public Goal(Goal other) : base(){
-			foreach (KeyValuePair<string, Condition> kvp in other) {
-				this.Add (kvp.Key, kvp.Value);
-			}
-
-		}
-
-		public Goal() : base(){
-		}
+		public static ObjectPool<Goal> pool = new ObjectPool<Goal>(1, 1);
 
 	}
 
@@ -249,11 +240,20 @@ namespace Ai.Goap {
 	public class Effects : Dictionary<string, Effect> {
 
 		public Goal reverseApplyEffectsToGoal(Goal goal){
-			Goal newGoal = new Goal (goal);
-			List<string> keys = new List<string> (newGoal.Keys);
+
+			//Start with empty new goal, fill it with reversed conditions.
+			Goal newGoal = Goal.pool.Borrow ();
+			newGoal.Clear ();
+
+			List<string> keys = new List<string> (goal.Keys);
 			foreach(string k in keys){
 				if (this.ContainsKey (k)) {
-					newGoal [k] = this [k].reverseApplyEffectToCondition (goal[k]);	
+					Condition possibleNewCond = this[k].reverseApplyEffectToCondition (goal[k]);	
+
+					//If it's null means condition filled by action.
+					if(possibleNewCond != null){
+						newGoal.Add(k, possibleNewCond);
+					}
 				}
 			}
 
