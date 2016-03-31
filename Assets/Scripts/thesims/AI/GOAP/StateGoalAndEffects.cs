@@ -142,7 +142,7 @@ namespace Ai.Goap {
 					Goal current = currentGoal [agentGoal.Key];
 
 					//go through parent node's conditions
-					foreach (KeyValuePair<string, Condition> kvp in currentGoal) {
+					foreach (KeyValuePair<string, Condition> kvp in current) {
 
 						// If initial state without this parameter, irrelevant and continue
 						if (!this.ContainsKey (kvp.Key)) {
@@ -151,7 +151,7 @@ namespace Ai.Goap {
 						else {
 							
 							// If child node doesnt contain this goal, it is satisfied!
-							if (!possibleGoal.ContainsKey (kvp.Key)) {
+							if (!possible.ContainsKey (kvp.Key)) {
 								res = true;
 							} 
 
@@ -163,12 +163,15 @@ namespace Ai.Goap {
 								//if int check if new closer to wanted
 								if (sv.value.GetType () == typeof(int)) {
 
-
 									if (sv.CheckCondition (currCond) && sv.CheckCondition (possCond)) {
 										continue;
 									}
 									if (sv.CheckCondition (currCond) && !sv.CheckCondition (possCond)) {
 										return false;
+									}
+									if (!sv.CheckCondition (currCond) && sv.CheckCondition (possCond)) {
+										res = true;
+										continue;
 									}
 
 									//now both conditions dont hold, check if possCond improves
