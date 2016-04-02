@@ -67,7 +67,6 @@ namespace Ai.Goap
 					//TODO: delete print
 					Debug.Log("considering " + action.name);
 
-
 					WorldGoal possibleChildGoal = action.reverseApplyToWorldGoal (currentNode.goal);
 
 					Debug.Log ("new goal will be: " + GoapAgent.PrettyPrint(possibleChildGoal));

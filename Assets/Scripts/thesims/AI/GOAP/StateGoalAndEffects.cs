@@ -150,10 +150,12 @@ namespace Ai.Goap {
 						} 
 						else {
 
-							Debug.LogError ("Checking " + kvp.Key);
+							Debug.Log ("Checking " + kvp.Key);
+
 
 							// If child node doesnt contain this goal, it is satisfied!
 							if (!possible.ContainsKey (kvp.Key)) {
+								Debug.Log ("new goal is better, doesnt require " + kvp.Key);
 								res = true;
 							} 
 
@@ -169,9 +171,11 @@ namespace Ai.Goap {
 										continue;
 									}
 									if (sv.CheckCondition (currCond) && !sv.CheckCondition (possCond)) {
+										Debug.Log ("this Goal isnt any better! abort!");
 										return false;
 									}
 									if (!sv.CheckCondition (currCond) && sv.CheckCondition (possCond)) {
+										Debug.Log ("new goal is better, it now satisfies condition");
 										res = true;
 										continue;
 									}
@@ -213,6 +217,7 @@ namespace Ai.Goap {
 
 								//if new cond worse - return false
 								if (res == false) {
+									Debug.Log ("this Goal isnt any better! abort!");
 									return false;
 								}
 							}
@@ -220,6 +225,10 @@ namespace Ai.Goap {
 					}
 				} 
 			}
+			if (res == false) {
+				Debug.Log ("this Goal isnt any better! abort!");
+			} else {
+				Debug.Log ("this Goal is better!");}
 			return res;
 		}
 	}
@@ -272,6 +281,7 @@ namespace Ai.Goap {
 			//Start with empty new goal, fill it with reversed conditions.
 			Goal newGoal = Goal.pool.Borrow ();
 			newGoal.Clear ();
+
 
 			List<string> keys = new List<string> (goal.Keys);
 			foreach(string k in keys){

@@ -136,19 +136,31 @@ namespace Ai.Goap {
 		// Create possible previous goal (before this actionwas made)
 		public WorldGoal reverseApplyToWorldGoal(WorldGoal goal){
 
-			WorldGoal newGoal = new WorldGoal (goal); //this is deep copied, see c'tor
+			WorldGoal newGoal = new WorldGoal (goal); //this is deep copied, see c'tor	
 
 			foreach (KeyValuePair<IStateful, Goal> agentGoal in goal) {
+
 				GoapAgent currAgent = (GoapAgent)agentGoal.Key;
 				Goal currGoal = agentGoal.Value; 
+				Goal updatedGoal = this.effects.reverseApplyEffectsToGoal (currGoal);
+				List<string> keys = new List<string> (updatedGoal.Keys);
+				foreach (string k in keys) {
+					if (updatedGoal [k] == null) {
+						updatedGoal.Remove (k);
+					}
+				}
+
 				if (newGoal.ContainsKey (currAgent))
-					newGoal [currAgent] = this.effects.reverseApplyEffectsToGoal (currGoal);
+					newGoal [currAgent] = updatedGoal;
 				else
-					newGoal.Add (currAgent, this.effects.reverseApplyEffectsToGoal (currGoal));
+					newGoal.Add (currAgent, updatedGoal);
 
 				// Add target preconditions to new goal
 				foreach (KeyValuePair<string, Condition> kvp in this.preconditions) {
-					newGoal [currAgent].Add (kvp.Key, new Condition (kvp.Value.comparison, kvp.Value.value));
+					if (!newGoal [currAgent].ContainsKey (kvp.Key)) {
+						newGoal [currAgent].Add (kvp.Key, new Condition (kvp.Value.comparison, kvp.Value.value));
+					}
+
 				}
 			}
 
