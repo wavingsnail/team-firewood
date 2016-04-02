@@ -420,6 +420,7 @@ Transform:
   m_LocalPosition: {x: 48.5, y: -1.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1781253150}
   - {fileID: 1127661212}
   m_Father: {fileID: 1402324191}
   m_RootOrder: 1
@@ -736,7 +737,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 545958785}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!212 &1127661213
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1196,7 +1197,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2065304800}
-  - {fileID: 1781253150}
   m_Father: {fileID: 1402324191}
   m_RootOrder: 0
 --- !u!1001 &1729029499
@@ -1279,11 +1279,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1781253149}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.5, y: -1.8, z: -47.3}
+  m_LocalPosition: {x: -5.8, y: 1.8, z: -47.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1726426775}
-  m_RootOrder: 1
+  m_Father: {fileID: 545958785}
+  m_RootOrder: 0
 --- !u!81 &1781253151
 AudioListener:
   m_ObjectHideFlags: 0
@@ -1412,7 +1412,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 142894, guid: 2b3e92b4c5a44d747894d6409deb295e, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 21298108, guid: 2b3e92b4c5a44d747894d6409deb295e, type: 2}
       propertyPath: m_Sprite

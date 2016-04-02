@@ -6,14 +6,14 @@ namespace TeamFirewood {
 	public class TryToFindAction : GoapAction {
 		public Item item;
 		public PointOfInterestType whereToLook;
-		private List<IStateful> targets;
+		private List<IStateful> targets;	
 
 		protected virtual void Awake() {
 			//AddPrecondition(item.ToString(), CompareType.Equal, 0);
-			AddEffect(item.ToString(), ModificationType.Set, true);
+			AddEffect(item.ToString(), ModificationType.Add, 1);
 
-			AddTargetPrecondition ("has"+item, CompareType.Equal, true);
-			AddTargetEffect ("has"+item, ModificationType.Set, false);
+			AddTargetPrecondition (item.ToString(), CompareType.Equal, 0);
+			AddTargetEffect (item.ToString(), ModificationType.Add, -1);
 
 			AddTargetPrecondition ("searchedHere", CompareType.Equal, false);
 			AddTargetEffect ("searchedHere", ModificationType.Set, true);
