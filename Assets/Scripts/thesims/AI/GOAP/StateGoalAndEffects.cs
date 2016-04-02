@@ -130,16 +130,15 @@ namespace Ai.Goap {
 
 		public bool isGoalCloser(WorldGoal currentGoal, WorldGoal possibleGoal){
 			bool res = false;
-
 			foreach (KeyValuePair<IStateful, Goal> agentGoal in possibleGoal) {
 				Goal possible = agentGoal.Value;
-
 				// TODO: what if possible goal doesnt contain this person
 				if (!currentGoal.ContainsKey (agentGoal.Key)) {
 					continue;
 				}
 				else{
 					Goal current = currentGoal [agentGoal.Key];
+
 
 					//go through parent node's conditions
 					foreach (KeyValuePair<string, Condition> kvp in current) {
@@ -162,11 +161,10 @@ namespace Ai.Goap {
 							// Else - check if child goal is closer to inital state
 							else {
 								StateValue sv = this [kvp.Key];
-								Condition currCond = current [kvp.Key];
-								Condition possCond = kvp.Value;
+								Condition currCond = kvp.Value; 
+								Condition possCond = possible [kvp.Key];
 								//if int check if new closer to wanted
 								if (sv.value.GetType () == typeof(int)) {
-
 									if (sv.CheckCondition (currCond) && sv.CheckCondition (possCond)) {
 										continue;
 									}
@@ -182,37 +180,40 @@ namespace Ai.Goap {
 
 									//now both conditions dont hold, check if possCond improves
 									//assume both goals have same compare type
-									switch(currCond.comparison){
+									switch (currCond.comparison) {
 									case CompareType.Equal:
-										//Debug.Log ("Equal - sv.value: " + sv.value + ", possCond.value: " + possCond.value + ", currCond.value: " + currCond.value);
-										res = (Mathf.Abs((int)sv.value - (int)currCond.value)) < (Mathf.Abs((int)sv.value - (int)possCond.value));
+										Debug.Log ("Equal - sv.value: " + sv.value + ", possCond.value: " + possCond.value + ", currCond.value: " + currCond.value);
+										res = (Mathf.Abs ((int)sv.value - (int)currCond.value)) < (Mathf.Abs ((int)sv.value - (int)possCond.value));
 										break;
 									case CompareType.LessThan:
-										//Debug.Log ("LessThan - sv.value: " + sv.value + ", possCond.value: " + possCond.value + ", currCond.value: " + currCond.value);
-										res = ((int)possCond.value - (int)sv.value) < ((int)currCond.value - (int)sv.value);
-										break;
-									case CompareType.LessThanOrEqual:
-										//Debug.Log ("LessThanOrEqual - sv.value: " + sv.value + ", possCond.value: " + possCond.value + ", currCond.value: " + currCond.value);
-										res = ((int)possCond.value - (int)sv.value) <= ((int)currCond.value - (int)sv.value);
-										break;
-									case CompareType.MoreThan:
-										//Debug.Log ("MoreThan - sv.value: " + sv.value + ", possCond.value: " + possCond.value + ", currCond.value: " + currCond.value);
+										Debug.Log ("LessThan - sv.value: " + sv.value + ", possCond.value: " + possCond.value + ", currCond.value: " + currCond.value);
 										res = ((int)possCond.value - (int)sv.value) > ((int)currCond.value - (int)sv.value);
 										break;
+									case CompareType.LessThanOrEqual:
+										Debug.Log ("LessThanOrEqual - sv.value: " + sv.value + ", possCond.value: " + possCond.value + ", currCond.value: " + currCond.value);
+										res = ((int)possCond.value - (int)sv.value) > ((int)currCond.value - (int)sv.value);
+										break;
+									case CompareType.MoreThan:
+										Debug.Log ("MoreThan - sv.value: " + sv.value + ", possCond.value: " + possCond.value + ", currCond.value: " + currCond.value);
+										res = ((int)possCond.value - (int)sv.value) < ((int)currCond.value - (int)sv.value);
+										break;
 									case CompareType.MoreThanOrEqual:
-										//Debug.Log ("MoreThanOrEqual - sv.value: " + sv.value + ", possCond.value: " + possCond.value + ", currCond.value: " + currCond.value);
-										res = ((int)possCond.value - (int)sv.value) >= ((int)currCond.value - (int)sv.value);
+										Debug.Log ("MoreThanOrEqual - sv.value: " + sv.value + ", possCond.value: " + possCond.value + ", currCond.value: " + currCond.value);
+										res = ((int)possCond.value - (int)sv.value) < ((int)currCond.value - (int)sv.value);
 										break;
 									case CompareType.NotEqual:
-										//Debug.Log ("NotEqual - sv.value: " + sv.value + ", possCond.value: " + possCond.value + ", currCond.value: " + currCond.value);
-										res = (Mathf.Abs((int)sv.value - (int)currCond.value)) > (Mathf.Abs((int)sv.value - (int)possCond.value));
+										Debug.Log ("NotEqual - sv.value: " + sv.value + ", possCond.value: " + possCond.value + ", currCond.value: " + currCond.value);
+										res = (Mathf.Abs ((int)sv.value - (int)currCond.value)) > (Mathf.Abs ((int)sv.value - (int)possCond.value));
 										break;
 									}
 
 									//if bool check if new matches while old doesnt
 								} else if (sv.value.GetType () == typeof(bool)) {
+									Debug.Log ("2");
 									//assuming booleans will only get ModificationType.Set
 									res = (sv.value != currCond.value && sv.value == possCond.value);
+								} else {
+									Debug.Log ("3");
 								}
 
 								//if new cond worse - return false
@@ -285,13 +286,18 @@ namespace Ai.Goap {
 
 			List<string> keys = new List<string> (goal.Keys);
 			foreach(string k in keys){
+				
 				if (this.ContainsKey (k)) {
-					Condition possibleNewCond = this[k].reverseApplyEffectToCondition (goal[k]);	
+					Condition possibleNewCond = this [k].reverseApplyEffectToCondition (goal [k]);	
 
 					//If it's null means condition filled by action.
-					if(possibleNewCond != null){
-						newGoal.Add(k, possibleNewCond);
+					if (possibleNewCond != null) {
+						newGoal.Add (k, possibleNewCond);
 					}
+				} else {
+					Debug.Log (k + " unchanged by this action. keep it as is in new goal.");
+					Condition newCond = new Condition (goal [k].comparison, goal [k].value);
+					newGoal.Add (k, newCond);
 				}
 			}
 

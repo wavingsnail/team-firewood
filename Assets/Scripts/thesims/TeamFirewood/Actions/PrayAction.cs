@@ -12,7 +12,7 @@ namespace TeamFirewood {
 		protected virtual void Awake() {
 //			AddPrecondition("mushroomsAmount", CompareType.Equal, neededAmount);
 			AddPrecondition(resource.ToString(), CompareType.MoreThanOrEqual, neededAmount);
-			AddEffect("has" + Achievement.ToString(), ModificationType.Set, true);
+			AddEffect(Achievement.ToString(), ModificationType.Set, true);
 		}
 
 		protected void Start() {

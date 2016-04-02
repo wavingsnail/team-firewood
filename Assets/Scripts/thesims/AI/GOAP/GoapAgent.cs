@@ -252,6 +252,13 @@ namespace Ai.Goap {
 	    public static string PrettyPrint(GoapAction action) {
 	        return action.name;
 	    }
+		public static string PrettyPrint(Condition condition) {
+			var s = new StringBuilder();
+			s.Append(condition.comparison)
+				.Append(": ")
+				.Append(condition.value);
+			return s.ToString();
+		}
 	#endregion
 	}
 }

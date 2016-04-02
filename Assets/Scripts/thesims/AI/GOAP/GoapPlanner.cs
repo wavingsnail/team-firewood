@@ -13,7 +13,7 @@ namespace Ai.Goap
 	public static class GoapPlanner
 	{
 		// This seems like enough...
-		private const int MAX_FRINGE_NODES = 2000;
+		private const int MAX_FRINGE_NODES = 100;
 
 		/// <summary>
 		/// A* forward search for a plan that satisfies the given goal.
@@ -71,7 +71,7 @@ namespace Ai.Goap
 
 					Debug.Log ("new goal will be: " + GoapAgent.PrettyPrint(possibleChildGoal));
 
-					if (agent.GetState ().isGoalCloser (currentNode.goal, possibleChildGoal)) {
+					if (agent.GetState().isGoalCloser(currentNode.goal, possibleChildGoal)) {
 
 
 						// No targets, move to next action
