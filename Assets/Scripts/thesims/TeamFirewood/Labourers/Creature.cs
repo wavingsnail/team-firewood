@@ -11,7 +11,7 @@ namespace TeamFirewood {
 			base.Awake();
 			var goal = new Goal();
 			//yoel: maybe this needs to be phrased differently (hasTool / hasNirvana / hasItem & greaterThan etc.)
-			goal["has" + Item.Nirvana] = new Condition(CompareType.Equal, true);
+			goal[Item.Nirvana.ToString()] = new Condition(CompareType.MoreThanOrEqual, 1);
 			worldGoal[this] = goal;
 		}
 

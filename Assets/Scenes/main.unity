@@ -464,6 +464,10 @@ Prefab:
       propertyPath: availableActions.Array.data[5]
       value: 
       objectReference: {fileID: 1613782017}
+    - target: {fileID: 142894, guid: 2b3e92b4c5a44d747894d6409deb295e, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2b3e92b4c5a44d747894d6409deb295e, type: 2}
   m_IsPrefabParent: 0
@@ -1156,6 +1160,90 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11433050, guid: 6d0b619b530a548d1839a19ae7bf5faf, type: 2}
+      propertyPath: setStaticActionName
+      value: PickUpTool
+      objectReference: {fileID: 0}
+    - target: {fileID: 11432046, guid: 6d0b619b530a548d1839a19ae7bf5faf, type: 2}
+      propertyPath: setStaticActionName
+      value: PickUpLogs
+      objectReference: {fileID: 0}
+    - target: {fileID: 11416696, guid: 6d0b619b530a548d1839a19ae7bf5faf, type: 2}
+      propertyPath: setStaticActionName
+      value: PickUpOre
+      objectReference: {fileID: 0}
+    - target: {fileID: 11456790, guid: 6d0b619b530a548d1839a19ae7bf5faf, type: 2}
+      propertyPath: setStaticActionName
+      value: DropOffFirewood
+      objectReference: {fileID: 0}
+    - target: {fileID: 11489406, guid: 6d0b619b530a548d1839a19ae7bf5faf, type: 2}
+      propertyPath: setStaticActionName
+      value: DropOffNewTools
+      objectReference: {fileID: 0}
+    - target: {fileID: 11455238, guid: 6d0b619b530a548d1839a19ae7bf5faf, type: 2}
+      propertyPath: setStaticActionName
+      value: DropOffLogs
+      objectReference: {fileID: 0}
+    - target: {fileID: 11448900, guid: 6d0b619b530a548d1839a19ae7bf5faf, type: 2}
+      propertyPath: setStaticActionName
+      value: DropOffOre
+      objectReference: {fileID: 0}
+    - target: {fileID: 11449268, guid: 6d0b619b530a548d1839a19ae7bf5faf, type: 2}
+      propertyPath: setStaticActionName
+      value: CraftFirewood
+      objectReference: {fileID: 0}
+    - target: {fileID: 11437118, guid: 6d0b619b530a548d1839a19ae7bf5faf, type: 2}
+      propertyPath: setStaticActionName
+      value: CraftNewTools
+      objectReference: {fileID: 0}
+    - target: {fileID: 11432252, guid: 6d0b619b530a548d1839a19ae7bf5faf, type: 2}
+      propertyPath: setStaticActionName
+      value: HarvestLogs
+      objectReference: {fileID: 0}
+    - target: {fileID: 11417930, guid: 6d0b619b530a548d1839a19ae7bf5faf, type: 2}
+      propertyPath: setStaticActionName
+      value: HarvestOre
+      objectReference: {fileID: 0}
+    - target: {fileID: 11416540, guid: 6d0b619b530a548d1839a19ae7bf5faf, type: 2}
+      propertyPath: setStaticActionName
+      value: CollectBranches
+      objectReference: {fileID: 0}
+    - target: {fileID: 11412580, guid: 6d0b619b530a548d1839a19ae7bf5faf, type: 2}
+      propertyPath: setStaticActionName
+      value: CraftFirewoodFromBranches
+      objectReference: {fileID: 0}
+    - target: {fileID: 11419718, guid: 6d0b619b530a548d1839a19ae7bf5faf, type: 2}
+      propertyPath: setStaticActionName
+      value: BreakDownNewTools
+      objectReference: {fileID: 0}
+    - target: {fileID: 11405754, guid: 6d0b619b530a548d1839a19ae7bf5faf, type: 2}
+      propertyPath: setStaticActionName
+      value: dig key
+      objectReference: {fileID: 0}
+    - target: {fileID: 11475618, guid: 6d0b619b530a548d1839a19ae7bf5faf, type: 2}
+      propertyPath: setStaticActionName
+      value: bash
+      objectReference: {fileID: 0}
+    - target: {fileID: 11474036, guid: 6d0b619b530a548d1839a19ae7bf5faf, type: 2}
+      propertyPath: setStaticActionName
+      value: open door
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425908, guid: 6d0b619b530a548d1839a19ae7bf5faf, type: 2}
+      propertyPath: setStaticActionName
+      value: ask advice
+      objectReference: {fileID: 0}
+    - target: {fileID: 11415050, guid: 6d0b619b530a548d1839a19ae7bf5faf, type: 2}
+      propertyPath: setStaticActionName
+      value: dig treasure
+      objectReference: {fileID: 0}
+    - target: {fileID: 11434714, guid: 6d0b619b530a548d1839a19ae7bf5faf, type: 2}
+      propertyPath: setStaticActionName
+      value: meditate
+      objectReference: {fileID: 0}
+    - target: {fileID: 11457600, guid: 6d0b619b530a548d1839a19ae7bf5faf, type: 2}
+      propertyPath: setStaticActionName
+      value: mushrooms
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6d0b619b530a548d1839a19ae7bf5faf, type: 2}
   m_IsPrefabParent: 0
@@ -1256,6 +1344,10 @@ Prefab:
       propertyPath: availableActions.Array.data[5]
       value: 
       objectReference: {fileID: 1613782017}
+    - target: {fileID: 142894, guid: 2b3e92b4c5a44d747894d6409deb295e, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2b3e92b4c5a44d747894d6409deb295e, type: 2}
   m_IsPrefabParent: 0
@@ -1483,6 +1575,10 @@ Prefab:
     - target: {fileID: 142894, guid: 2b3e92b4c5a44d747894d6409deb295e, type: 2}
       propertyPath: m_Name
       value: Pirate (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 142894, guid: 2b3e92b4c5a44d747894d6409deb295e, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2b3e92b4c5a44d747894d6409deb295e, type: 2}

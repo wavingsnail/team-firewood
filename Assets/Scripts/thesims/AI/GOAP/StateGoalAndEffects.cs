@@ -146,10 +146,12 @@ namespace Ai.Goap {
 
 						// If initial state without this parameter, irrelevant and continue
 						if (!this.ContainsKey (kvp.Key)) {
-							Debug.LogError ("Agent initial state doesnt contain " + kvp.Key);
+							Debug.Log("Agent initial state: " + GoapAgent.PrettyPrint(this) + " doesnt contain " + kvp.Key);
 						} 
 						else {
-							
+
+							Debug.LogError ("Checking " + kvp.Key);
+
 							// If child node doesnt contain this goal, it is satisfied!
 							if (!possible.ContainsKey (kvp.Key)) {
 								res = true;

@@ -11,8 +11,8 @@ namespace TeamFirewood {
 			var goal = new Goal();
 			//yoel: maybe this needs to be phrased differently (hasTool / hasTreasure / hasItem & greaterThan etc.)
 
-			//TODO: deete this goal: 
-			goal[Item.Advice.ToString()] = new Condition(CompareType.MoreThanOrEqual, 1);
+			//TODO: delete this goal: 
+			goal[Item.Part2.ToString()] = new Condition(CompareType.MoreThanOrEqual, 1);
 
 			//TODO: uncomment this goal:
 			//goal["has" + Item.Treasure] = new Condition(CompareType.Equal, true);

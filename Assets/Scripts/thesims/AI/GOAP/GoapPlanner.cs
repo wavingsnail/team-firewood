@@ -13,7 +13,7 @@ namespace Ai.Goap
 	public static class GoapPlanner
 	{
 		// This seems like enough...
-		private const int MAX_FRINGE_NODES = 5000;
+		private const int MAX_FRINGE_NODES = 2000;
 
 		/// <summary>
 		/// A* forward search for a plan that satisfies the given goal.
@@ -25,10 +25,6 @@ namespace Ai.Goap
 			List<GoapAction> availableActions,
 			WorldGoal goal)
 		{
-			var worldState = WorldState.pool.Borrow ();
-			worldState.Clear ();
-
-
 
 			var exploredNodes = new Dictionary<WorldState, Node> (WorldStateComparer.instance);
 			var closedSet = new HashSet<WorldState> (WorldStateComparer.instance);
@@ -45,13 +41,18 @@ namespace Ai.Goap
 
 				currentNode = openSet.Dequeue ();
 
+				//TODO: delete print
+				Debug.Log ("current world goal: " + GoapAgent.PrettyPrint(currentNode.goal));
+
+					
+
 				if (DoConditionsApply (currentNode.goal[agent], agent.GetState ())) {
 					//DebugUtils.LogError("Selected plan with cost: " + currentNode.Score);
 					var plan = UnwrapPlan (currentNode); // TODO check if unwrap plan is good for our needs
 
 					// Return all nodes.
 					Node.pool.ReturnAll ();
-					WorldState.pool.Return (worldState);
+
 
 					// Check for leaks in the pools:
 					//DebugUtils.LogError("Nodes: " + Node.pool.Count);
@@ -63,8 +64,13 @@ namespace Ai.Goap
 
 				foreach (GoapAction action in availableActions) {
 					
+					//TODO: delete print
+					Debug.Log("considering " + action.name);
+
 
 					WorldGoal possibleChildGoal = action.reverseApplyToWorldGoal (currentNode.goal);
+
+					Debug.Log ("new goal will be: " + GoapAgent.PrettyPrint(possibleChildGoal));
 
 					if (agent.GetState ().isGoalCloser (currentNode.goal, possibleChildGoal)) {
 
@@ -84,8 +90,8 @@ namespace Ai.Goap
 
 
 							//TODO: check target preconds, make sure this works
-							if(goal.ContainsKey(target)){
-								if (!DoConditionsApply (goal[target], target.GetState ())) {
+							if (goal.ContainsKey (target)) {
+								if (!DoConditionsApply (goal [target], target.GetState ())) {
 									continue;
 								}
 							}
@@ -100,6 +106,11 @@ namespace Ai.Goap
 						Node newChiledNode = Node.pool.Borrow ();
 						newChiledNode.Init (currentNode, cost, possibleChildGoal, action, closestTarget);
 						openSet.Enqueue (newChiledNode, newChiledNode.runningCost);
+					}
+
+					//TODO: delete 'else' scope
+					else {
+						Debug.Log (action.name + " doesnt improve goal");
 					}
 						
 				}
