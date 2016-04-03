@@ -40,6 +40,12 @@ namespace Ai.Goap {
 	    public abstract State GetState();
 
 
+		public State GetPerceivedState (){
+			//default implementation does the same as getState
+			return GetState ();
+		}
+
+
 		public void nxtImg(){
 			if(targetImgs != null && targetImgs.Count > 0 && currImg < targetImgs.Count)
 				transform.GetChild (0).GetComponent <SpriteRenderer>().sprite = targetImgs[currImg];

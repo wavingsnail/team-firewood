@@ -13,8 +13,8 @@ namespace TeamFirewood
 
 		protected virtual void Awake ()
 		{
-//			AddPrecondition (resource.ToString (), CompareType.LessThan, maxAmountToCarry);
 			AddEffect (resource.ToString(), ModificationType.Add, amountToCollect);
+			AddTargetEffect (resource.ToString(), ModificationType.Add, -amountToCollect);
 		}
 
 		protected void Start ()

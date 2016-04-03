@@ -32,6 +32,22 @@ namespace TeamFirewood {
 			return state;
 		}
 
+		public State GetPerceivedState (){
+			
+			if ((bool)state ["searchedHere"].value) {
+				return state;
+			} else {
+				State perceived = new State ();
+				perceived ["searchedHere"] = state ["searchedHere"];
+				foreach(Item item in possibleItemsInPile){
+					perceived[item.ToString()] = new StateValue(1);
+				}
+				return perceived;
+			}
+
+
+		}
+
 		protected void Update() {
 		}
 	}

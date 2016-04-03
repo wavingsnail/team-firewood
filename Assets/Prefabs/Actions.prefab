@@ -270,8 +270,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef698e1f76d624c4bb78a14f87700006, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 1
-  workDuration: 2
+  cost: 3
+  workDuration: 5
   setStaticActionName: pushups
   actionSprite: {fileID: 21300010, guid: d75ecf2dbefc46744971b2a36b94d4c9, type: 3}
   resource: 9
@@ -344,7 +344,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14d8c22dc9edfe444bdc71d5e6aac403, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 1
+  cost: 2
   workDuration: 1
   setStaticActionName: dig key
   actionSprite: {fileID: 0}

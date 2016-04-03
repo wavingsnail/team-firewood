@@ -86,7 +86,7 @@ namespace Ai.Goap
 
 							//TODO: check target preconds, make sure this works
 							if (goal.ContainsKey (target)) {
-								if (!DoConditionsApply (goal [target], target.GetState ())) {
+								if (!DoConditionsApply (goal [target], target.GetPerceivedState ())) {
 									continue;
 								}
 							}

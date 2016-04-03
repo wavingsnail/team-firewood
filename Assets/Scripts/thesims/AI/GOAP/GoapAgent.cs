@@ -40,6 +40,11 @@ namespace Ai.Goap {
 	    /// </summary>
 	    public abstract State GetState();
 
+		public State GetPerceivedState (){
+			//default implementation does the same as getState
+			return GetState ();
+		}
+
 	    /// <summary>
 	    /// Return the current goal. The planner will search for a plan that fulfill
 	    /// it.
