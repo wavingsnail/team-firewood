@@ -77,12 +77,10 @@ namespace Ai.Goap
 						if (targets.Count == 0) {
 							continue;
 						}
-
+							
+						float tempCost = 0f;
 						IStateful closestTarget = null;
-						float travelCost = 0f;
 						foreach (var target in targets) {
-							//TODO: save only closest target #omri
-							closestTarget = target;
 
 							//TODO: check target preconds, make sure this works
 							if (goal.ContainsKey (target)) {
@@ -92,26 +90,12 @@ namespace Ai.Goap
 							}
 
 							if (action.RequiresInRange ()) {
-								var obj = target as Component;
-								// TODO: Move this to the action's effects. Instead of
-								//       action.cost, use action.CalculateCost(state, target)
-								//       that will return action.cost + travelCost (or
-								//       something else if the specific action requires
-								//       it).
-//								currentPosition.Set ((int)childState [agent] ["x"].value, (int)childState [agent] ["y"].value);
-								currentNode.position.Set (currentNode.position.x, currentNode.position.y);
-								var travelVector = (Vector2)obj.transform.position - currentNode.position;
-								travelCost = travelVector.magnitude;
-
-//								var x = StateValue.NormalizeValue (obj.transform.position.x);
-//								var y = StateValue.NormalizeValue (obj.transform.position.y);
-//								childState [agent] ["x"] = new StateValue (x);
-//								childState [agent] ["y"] = new StateValue (y);
-								//DebugUtils.LogError(travelCost + " to " + obj.name);
+								tempCost = action.CalculateCost (currentNode.position, target);
 							}
+
 						}
 
-						float cost = currentNode.runningCost + action.cost + action.workDuration + travelCost;
+						float cost = currentNode.runningCost + action.workDuration + tempCost;
 
 						Node newChiledNode = Node.pool.Borrow ();
 						newChiledNode.Init (currentNode, cost, possibleChildGoal, action, closestTarget);

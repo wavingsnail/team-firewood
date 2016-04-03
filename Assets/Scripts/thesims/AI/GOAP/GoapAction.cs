@@ -86,20 +86,33 @@ namespace Ai.Goap {
 	        return list;
 	    }
 
-//		public static IStateful GetClosestTarget(Vector2 currentPosition, GoapAgent agent)
-//		{
-//			Vector2 targetLocation = Vector2.zero;
-//			var targets = GetTargets ();
-//
-//
-//
-//			foreach (var target in targets) {
-//				var result = target as Component;
-//				if (result.transform.) {
-//					
-//				}
-//			}
-//		}
+		/// <summary>
+		/// Gets the closest target.
+		/// </summary>
+		/// <returns>The closest target.</returns>
+		/// <param name="currentPosition">Current position.</param>
+		/// <param name="agent">Agent.</param>
+		public float CalculateCost(Vector2 currentPosition, IStateful target)
+		{
+			// TODO: Move this to the action's effects. Instead of
+			//       action.cost, use action.CalculateCost(state, target)
+			//       that will return action.cost + travelCost (or
+			//       something else if the specific action requires
+			//       it).
+			//								currentPosition.Set ((int)childState [agent] ["x"].value, (int)childState [agent] ["y"].value);
+
+			//								var x = StateValue.NormalizeValue (obj.transform.position.x);
+			//								var y = StateValue.NormalizeValue (obj.transform.position.y);
+			//								childState [agent] ["x"] = new StateValue (x);
+			//								childState [agent] ["y"] = new StateValue (y);
+			//DebugUtils.LogError(travelCost + " to " + obj.name);
+			var obj = target as Component;
+			var travelVector = (Vector2)obj.transform.position - currentPosition;
+			float travelCost = travelVector.magnitude;
+			float result = cost + travelCost;
+
+			return result;
+		}
 
 	    /// <summary>
 	    /// Returns a WorldGoal that contains all the preconditions that the agent
