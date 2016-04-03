@@ -1,0 +1,37 @@
+2 or 3 people.
+======================================================
+Goal: 
+	- Find a treasure.
+Actions: 
+	- get Treasure (requires advice)
+	- Ask for advice (requires being in 2nd part of map) => get advice
+	- Open door (requires key & door is locked) => reach 2nd part of map, door is locked again
+	- Bash wall (requires strength > x) => reach 2nd part of map
+	- Dig (no pre conditions) => may find key (POI dependent)
+		* To make simulations different: randomize #keys (e.g. hasKey = randbool(0.2))
+	- Do push ups (no preconditions) => strength ++
+		* Only action in simulation for which RequiresInRange() returns false
+	
+POI's (points of interest) in the world: 
+======================================================
+1st part of map:
+	- Place where you can dig (once!) and find/not find a key.
+		* To make simulations different: randomize "time to dig" (e.g. randinrange(0,5))
+	- Door which you can open using a key
+	- Wall theat you can bash
+
+2nd part of map:
+	- Creature walking around from which you can get advice as to where's the treasure
+		* Creature is both a character & POI
+		Creature's goal: 
+			- Reach nirvana > x
+		Create's actions: 
+			- Meditate on mountain (requires mushrooms > x) => nirvana ++, mushrooms = 0
+				* Takes a long time
+			- Collect mushrooms (no preconditions) => mushrooms ++
+		
+		* Idea: creature can only give advice when it has reached nirvana > x
+
+	- Mountain where you can meditate
+		* Should be far away from treasure
+	- Mushroom valley, where you can collect mushrooms
