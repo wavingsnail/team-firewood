@@ -201,7 +201,7 @@ Transform:
 --- !u!4 &172204382 stripped
 Transform:
   m_PrefabParentObject: {fileID: 467262, guid: 6d0b619b530a548d1839a19ae7bf5faf, type: 2}
-  m_PrefabInternal: {fileID: 1613782016}
+  m_PrefabInternal: {fileID: 1588087445}
 --- !u!1 &192774894
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,19 +275,19 @@ MonoBehaviour:
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11457600, guid: 6d0b619b530a548d1839a19ae7bf5faf,
     type: 2}
-  m_PrefabInternal: {fileID: 1613782016}
+  m_PrefabInternal: {fileID: 1588087445}
   m_Script: {fileID: 11500000, guid: 14d8c22dc9edfe444bdc71d5e6aac403, type: 3}
 --- !u!114 &290012683 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11472928, guid: 6d0b619b530a548d1839a19ae7bf5faf,
     type: 2}
-  m_PrefabInternal: {fileID: 1613782016}
+  m_PrefabInternal: {fileID: 1588087445}
   m_Script: {fileID: 11500000, guid: 14d8c22dc9edfe444bdc71d5e6aac403, type: 3}
 --- !u!114 &305332454 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11434714, guid: 6d0b619b530a548d1839a19ae7bf5faf,
     type: 2}
-  m_PrefabInternal: {fileID: 1613782016}
+  m_PrefabInternal: {fileID: 1588087445}
   m_Script: {fileID: 11500000, guid: 0f458f4552203c44b9c099f9b9e613d0, type: 3}
 --- !u!4 &312352568 stripped
 Transform:
@@ -422,7 +422,7 @@ MonoBehaviour:
   - mushroom
   actionSprites:
   - {fileID: 21300004, guid: 966abd99e482e864980a52487c915425, type: 3}
-  inventory: {fileID: 0}
+  inventory: {fileID: 457370717}
   moveSpeed: 3
 --- !u!4 &545958785
 Transform:
@@ -622,28 +622,12 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 476110, guid: b580ac8697647864494690b2ed14df0a, type: 2}
   m_PrefabInternal: {fileID: 613975372}
---- !u!1 &895977058 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 102576, guid: 6d0b619b530a548d1839a19ae7bf5faf, type: 2}
-  m_PrefabInternal: {fileID: 1613782016}
---- !u!114 &895977059
+--- !u!114 &895977059 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 895977058}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
+  m_PrefabParentObject: {fileID: 11477976, guid: 6d0b619b530a548d1839a19ae7bf5faf,
+    type: 2}
+  m_PrefabInternal: {fileID: 1588087445}
   m_Script: {fileID: 11500000, guid: 7873a13bf1490b04f9819453e9361043, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cost: 1
-  workDuration: 0
-  setStaticActionName: dig treasure
-  required: 7
-  resource: 6
-  collectPOI: 14
-  amountToCollect: 1
 --- !u!1001 &925062844
 Prefab:
   m_ObjectHideFlags: 0
@@ -1160,7 +1144,7 @@ Transform:
   - {fileID: 2117885989}
   m_Father: {fileID: 0}
   m_RootOrder: 3
---- !u!1001 &1613782016
+--- !u!1001 &1588087445
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1199,33 +1183,32 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 11415050, guid: 6d0b619b530a548d1839a19ae7bf5faf, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6d0b619b530a548d1839a19ae7bf5faf, type: 2}
   m_IsPrefabParent: 0
 --- !u!114 &1613782019 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11475618, guid: 6d0b619b530a548d1839a19ae7bf5faf,
     type: 2}
-  m_PrefabInternal: {fileID: 1613782016}
+  m_PrefabInternal: {fileID: 1588087445}
   m_Script: {fileID: 11500000, guid: ea6ee0a8bd3763a4b93de57bbb29fa83, type: 3}
 --- !u!114 &1613782020 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11474036, guid: 6d0b619b530a548d1839a19ae7bf5faf,
     type: 2}
-  m_PrefabInternal: {fileID: 1613782016}
+  m_PrefabInternal: {fileID: 1588087445}
   m_Script: {fileID: 11500000, guid: 8c61eb818554cd64190ef517d4e21be4, type: 3}
 --- !u!114 &1613782021 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11405808, guid: 6d0b619b530a548d1839a19ae7bf5faf,
     type: 2}
-  m_PrefabInternal: {fileID: 1613782016}
+  m_PrefabInternal: {fileID: 1588087445}
   m_Script: {fileID: 11500000, guid: ef698e1f76d624c4bb78a14f87700006, type: 3}
 --- !u!114 &1613782022 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11425908, guid: 6d0b619b530a548d1839a19ae7bf5faf,
     type: 2}
-  m_PrefabInternal: {fileID: 1613782016}
+  m_PrefabInternal: {fileID: 1588087445}
   m_Script: {fileID: 11500000, guid: 7873a13bf1490b04f9819453e9361043, type: 3}
 --- !u!4 &1619969611
 Transform:
