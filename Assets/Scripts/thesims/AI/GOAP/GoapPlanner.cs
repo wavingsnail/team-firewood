@@ -32,7 +32,8 @@ namespace Ai.Goap
 
 			var currentNode = Node.pool.Borrow ();
 			currentNode.Init (null, 0f, goal, null, null);
-			currentNode.position = Vector2.zero;
+//			currentNode.position = Vector2.zero;
+			currentNode.position = (agent as Component).transform.position;
 
 			openSet.Enqueue (currentNode, 0f);
 			int iterations = 0;
@@ -46,8 +47,9 @@ namespace Ai.Goap
 				//Debug.Log ("current world goal: " + GoapAgent.PrettyPrint(currentNode.goal));
 
 				if (DoConditionsApply (currentNode.goal[agent], agent.GetState ())) {
-					//DebugUtils.LogError("Selected plan with cost: " + currentNode.Score);
+					DebugUtils.Log("Selected plan with cost: " + currentNode.Score);
 					var plan = UnwrapPlan (currentNode);
+					//DebugUtils.Log("the plan: " + GoapAgent.PrettyPrint(plan));
 
 					// Return all nodes.
 					Node.pool.ReturnAll ();
@@ -78,10 +80,13 @@ namespace Ai.Goap
 							continue;
 						}
 							
+						float minCost = 99999f;
 						float tempCost = 0f;
 						IStateful closestTarget = null;
+						Vector2 newPosition = currentNode.position;
 						foreach (var target in targets) {
-
+							
+							//DebugUtils.Log ("targets...");
 							//TODO: check target preconds, make sure this works
 							if (goal.ContainsKey (target)) {
 								if (!DoConditionsApply (goal [target], target.GetPerceivedState ())) {
@@ -91,24 +96,36 @@ namespace Ai.Goap
 
 							if (action.RequiresInRange ()) {
 								tempCost = action.CalculateCost (currentNode.position, target);
+								if (tempCost < minCost) {
+									minCost = tempCost;
+									closestTarget = target;
+									newPosition = (target as Component).transform.position;
+									DebugUtils.Log ("minCost: " + minCost);
+									DebugUtils.Log ("closestTarget: " + closestTarget);
+								}
+								//DebugUtils.Log ("calculating tempCost");
+							} else {
+								closestTarget = target;
+								tempCost = 9999;
+								DebugUtils.Log ("+++ closestTarget: " + closestTarget);
+								break;
 							}
-
 						}
 
 						float cost = currentNode.runningCost + action.workDuration + tempCost;
 
 						Node newChiledNode = Node.pool.Borrow ();
+						DebugUtils.Log ("*** closestTarget: " + closestTarget);
 						newChiledNode.Init (currentNode, cost, possibleChildGoal, action, closestTarget);
+						newChiledNode.position = newPosition;
 						openSet.Enqueue (newChiledNode, newChiledNode.runningCost);
 					}
 
 					//TODO: delete 'else' scope
 					else {
-						//Debug.Log (action.name + " doesnt improve goal");
+						//DebugUtils.Log (action.name + " doesnt improve goal");
 					}
-						
 				}
-
 			}
 			//TODO: return plan failed #yoel
 			return null;	
@@ -291,7 +308,6 @@ namespace Ai.Goap
 			public float runningCost;
 			public float cachedHeuristicCost = float.NegativeInfinity;
 			public WorldGoal goal;
-			public WorldState state;
 			public Vector2 position;
 			public GoapAction.WithContext action = GoapAction.WithContext.pool.Borrow ();
 
@@ -306,7 +322,6 @@ namespace Ai.Goap
 				this.parent = parent;
 				this.runningCost = runningCost;
 				this.goal = goal;
-				this.state = state;
 				this.action.Init (target, action);
 			}
 

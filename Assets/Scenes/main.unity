@@ -672,11 +672,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 429260, guid: 2b3e92b4c5a44d747894d6409deb295e, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 48.5
+      value: 51.5
       objectReference: {fileID: 0}
     - target: {fileID: 429260, guid: 2b3e92b4c5a44d747894d6409deb295e, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1.8
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 429260, guid: 2b3e92b4c5a44d747894d6409deb295e, type: 2}
       propertyPath: m_LocalPosition.z
@@ -726,6 +726,10 @@ Prefab:
       propertyPath: availableActions.Array.data[5]
       value: 
       objectReference: {fileID: 895977059}
+    - target: {fileID: 11465868, guid: 2b3e92b4c5a44d747894d6409deb295e, type: 2}
+      propertyPath: moveSpeed
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2b3e92b4c5a44d747894d6409deb295e, type: 2}
   m_IsPrefabParent: 0
@@ -1763,7 +1767,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1466209686}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e49c6a8b82e39e46bb9c857a33853b3, type: 3}
+  m_Script: {fileID: 11500000, guid: bf381d6ce3758874f971555007c7ca59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _actionEffects: []
@@ -1943,6 +1947,26 @@ Prefab:
     - target: {fileID: 467262, guid: 6d0b619b530a548d1839a19ae7bf5faf, type: 2}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11477976, guid: 6d0b619b530a548d1839a19ae7bf5faf, type: 2}
+      propertyPath: workDuration
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11405808, guid: 6d0b619b530a548d1839a19ae7bf5faf, type: 2}
+      propertyPath: cost
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11405808, guid: 6d0b619b530a548d1839a19ae7bf5faf, type: 2}
+      propertyPath: workDuration
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11475618, guid: 6d0b619b530a548d1839a19ae7bf5faf, type: 2}
+      propertyPath: cost
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 11475618, guid: 6d0b619b530a548d1839a19ae7bf5faf, type: 2}
+      propertyPath: workDuration
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6d0b619b530a548d1839a19ae7bf5faf, type: 2}
@@ -2232,6 +2256,10 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 142894, guid: 2b3e92b4c5a44d747894d6409deb295e, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2b3e92b4c5a44d747894d6409deb295e, type: 2}
   m_IsPrefabParent: 0
@@ -2428,6 +2456,10 @@ Prefab:
       propertyPath: availableActions.Array.data[5]
       value: 
       objectReference: {fileID: 895977059}
+    - target: {fileID: 142894, guid: 2b3e92b4c5a44d747894d6409deb295e, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2b3e92b4c5a44d747894d6409deb295e, type: 2}
   m_IsPrefabParent: 0

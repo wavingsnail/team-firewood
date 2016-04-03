@@ -61,6 +61,7 @@ public abstract class Worker : GoapAgent {
 
     public override void PlanFound(WorldGoal goal, Queue<GoapAction.WithContext> actions) {
         // Yay we found a plan for our goal
+			Debug.Log("ok...");
         Debug.Log("<color=green>Plan found</color> " + GoapAgent.PrettyPrint(actions));
     }
 

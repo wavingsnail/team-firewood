@@ -96,21 +96,12 @@ namespace Ai.Goap {
 		/// <param name="agent">Agent.</param>
 		public float CalculateCost(Vector2 currentPosition, IStateful target)
 		{
-			// TODO: Move this to the action's effects. Instead of
-			//       action.cost, use action.CalculateCost(state, target)
-			//       that will return action.cost + travelCost (or
-			//       something else if the specific action requires
-			//       it).
-			//								currentPosition.Set ((int)childState [agent] ["x"].value, (int)childState [agent] ["y"].value);
-
-			//								var x = StateValue.NormalizeValue (obj.transform.position.x);
-			//								var y = StateValue.NormalizeValue (obj.transform.position.y);
-			//								childState [agent] ["x"] = new StateValue (x);
-			//								childState [agent] ["y"] = new StateValue (y);
-			//DebugUtils.LogError(travelCost + " to " + obj.name);
 			var obj = target as Component;
+			DebugUtils.Log ("#### current position: " + currentPosition.ToString());
+			DebugUtils.Log ("$$$$ target position: " + (string)obj.transform.position.ToString());
 			var travelVector = (Vector2)obj.transform.position - currentPosition;
-			float travelCost = travelVector.magnitude;
+			float travelCost = travelVector.sqrMagnitude;
+			DebugUtils.Log ("sqrMagnitude: " + travelVector);
 			float result = cost + travelCost;
 
 			return result;
