@@ -23,7 +23,7 @@ namespace TeamFirewood {
 	}
 
 	/// <summary>
-	/// Backpack that holds a tool and resources.
+	/// Inventory that holds Agent's physical & mental belongings.
 	/// </summary>
 	public class Container : MonoBehaviour {
 	    public GameObject tool;

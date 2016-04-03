@@ -35,12 +35,12 @@ public class PickUpToolAction : GoapAction {
 
         // Create the tool and add it to the agent.
 
-        var backpack = agent.GetComponent<Container>();
+        var inventory = agent.GetComponent<Container>();
         // TODO: Use GameObjectPool to pool tools instead of instantiating new
         //       ones all the time.
-        var prefab = Resources.Load<GameObject>(backpack.toolType);
+        var prefab = Resources.Load<GameObject>(inventory.toolType);
         var tool = Instantiate(prefab, agent.transform.position, agent.transform.rotation) as GameObject;
-        backpack.tool = tool;
+        inventory.tool = tool;
         tool.transform.parent = agent.transform;
 
         return base.OnDone(agent, context);

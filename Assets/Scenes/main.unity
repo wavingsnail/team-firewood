@@ -269,7 +269,7 @@ MonoBehaviour:
   - pushups
   actionSprites:
   - {fileID: 21300010, guid: d75ecf2dbefc46744971b2a36b94d4c9, type: 3}
-  backpack: {fileID: 192774895}
+  inventory: {fileID: 192774895}
   moveSpeed: 2
 --- !u!114 &253895985 stripped
 MonoBehaviour:
@@ -422,7 +422,7 @@ MonoBehaviour:
   - mushroom
   actionSprites:
   - {fileID: 21300004, guid: 966abd99e482e864980a52487c915425, type: 3}
-  backpack: {fileID: 457370717}
+  inventory: {fileID: 0}
   moveSpeed: 3
 --- !u!4 &545958785
 Transform:
@@ -994,7 +994,7 @@ MonoBehaviour:
   - pushups
   actionSprites:
   - {fileID: 21300010, guid: d75ecf2dbefc46744971b2a36b94d4c9, type: 3}
-  backpack: {fileID: 1339717563}
+  inventory: {fileID: 1339717563}
   moveSpeed: 2
 --- !u!1 &1402324190
 GameObject:
@@ -1425,6 +1425,10 @@ Prefab:
       propertyPath: moveSpeed
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 11465868, guid: 2b3e92b4c5a44d747894d6409deb295e, type: 2}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 2067364169}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2b3e92b4c5a44d747894d6409deb295e, type: 2}
   m_IsPrefabParent: 0
@@ -1649,6 +1653,12 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!114 &2067364169 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11472920, guid: 2b3e92b4c5a44d747894d6409deb295e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1782764499}
+  m_Script: {fileID: 11500000, guid: de29a19b4f492479786eb4b9d0bb92bc, type: 3}
 --- !u!1 &2117885988
 GameObject:
   m_ObjectHideFlags: 0

@@ -41,8 +41,8 @@ namespace TeamFirewood {
 			target.setSearched (true);
 
 			// Done harvesting.
-			var backpack = agent.GetComponent<Container>();
-			backpack.items[item] += 1;
+			var inventory = agent.GetComponent<Container>();
+			inventory.items[item] += 1;
 
 			return base.OnDone(agent, context);
 		}

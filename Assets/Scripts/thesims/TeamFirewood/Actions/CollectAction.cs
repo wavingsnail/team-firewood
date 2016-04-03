@@ -37,8 +37,8 @@ namespace TeamFirewood
 		protected override bool OnDone (GoapAgent agent, WithContext context)
 		{
 			// Done harvesting.
-			var backpack = agent.GetComponent<Container> ();
-			backpack.items [resource] += amountToCollect;
+			var inventory = agent.GetComponent<Container> ();
+			inventory.items [resource] += amountToCollect;
 			return base.OnDone (agent, context);
 		}
 	}

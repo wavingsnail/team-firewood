@@ -29,10 +29,10 @@ public class DropOffItemAction : GoapAction {
     }
 
     protected override bool OnDone(GoapAgent agent, WithContext context) {
-        var backpack = agent.GetComponent<Container>();
+        var inventory = agent.GetComponent<Container>();
         var target = context.target as HarvestPoint;
         ++target.GetComponent<Container>().items[itemToDrop];
-        --backpack.items[itemToDrop];
+        --inventory.items[itemToDrop];
         
         return base.OnDone(agent, context);
     }
