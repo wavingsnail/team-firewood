@@ -28,12 +28,12 @@ public class BasicCraftItemAction : GoapAction {
     }
 
     protected override bool OnDone(GoapAgent agent, WithContext context) {
-        var backpack = agent.GetComponent<Container>();
+        var inventory = agent.GetComponent<Container>();
         foreach (var item in ingredients) {
-            backpack.items[item.item] -= item.amount;
+            inventory.items[item.item] -= item.amount;
         }
         foreach (var item in products) {
-            backpack.items[item.item] += item.amount;
+            inventory.items[item.item] += item.amount;
         }
         return base.OnDone(agent, context);
     }

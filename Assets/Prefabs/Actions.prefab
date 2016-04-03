@@ -16,38 +16,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &100562
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 486752}
-  - 114: {fileID: 11489406}
-  m_Layer: 0
-  m_Name: DropOffNewTools
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &101166
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 413054}
-  - 114: {fileID: 11416696}
-  m_Layer: 0
-  m_Name: PickUpOre
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &102576
 GameObject:
   m_ObjectHideFlags: 0
@@ -56,7 +24,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400100}
-  - 114: {fileID: 11415050}
+  - 114: {fileID: 11477976}
   m_Layer: 0
   m_Name: zDigForTreasureAction
   m_TagString: Untagged
@@ -111,86 +79,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &116474
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 468366}
-  - 114: {fileID: 11455238}
-  m_Layer: 0
-  m_Name: DropOffLogs
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &119000
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 452930}
-  - 114: {fileID: 11432252}
-  m_Layer: 0
-  m_Name: HarvestLogs
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &121410
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 407632}
-  - 114: {fileID: 11448900}
-  m_Layer: 0
-  m_Name: DropOffOre
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &129982
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 403808}
-  - 114: {fileID: 11416540}
-  m_Layer: 0
-  m_Name: CollectBranches
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &137930
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 486560}
-  - 114: {fileID: 11432046}
-  m_Layer: 0
-  m_Name: PickUpLogs
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &140726
 GameObject:
   m_ObjectHideFlags: 0
@@ -223,102 +111,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &157148
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 431112}
-  - 114: {fileID: 11449268}
-  m_Layer: 0
-  m_Name: CraftFirewood
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &159246
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 430084}
-  - 114: {fileID: 11437118}
-  m_Layer: 0
-  m_Name: CraftNewTools
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &169166
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 432650}
-  - 114: {fileID: 11419718}
-  m_Layer: 0
-  m_Name: BreakDownNewTools
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &179892
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 428652}
-  - 114: {fileID: 11456790}
-  m_Layer: 0
-  m_Name: DropOffFirewood
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &181620
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 449758}
-  - 114: {fileID: 11417930}
-  m_Layer: 0
-  m_Name: HarvestOre
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &188770
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 485288}
-  - 114: {fileID: 11433050}
-  m_Layer: 0
-  m_Name: PickUpTool
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &189162
 GameObject:
   m_ObjectHideFlags: 0
@@ -330,22 +122,6 @@ GameObject:
   - 114: {fileID: 11405808}
   m_Layer: 0
   m_Name: zDoPushupsAction
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &194712
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 435542}
-  - 114: {fileID: 11412580}
-  m_Layer: 0
-  m_Name: CraftFirewoodFromBranches
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -378,7 +154,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 467262}
-  m_RootOrder: 19
+  m_RootOrder: 5
 --- !u!4 &402630
 Transform:
   m_ObjectHideFlags: 1
@@ -390,43 +166,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 467262}
-  m_RootOrder: 14
---- !u!4 &403808
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 129982}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 467262}
-  m_RootOrder: 11
---- !u!4 &407632
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 121410}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 467262}
-  m_RootOrder: 6
---- !u!4 &413054
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 101166}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 467262}
-  m_RootOrder: 2
+  m_RootOrder: 0
 --- !u!4 &428356
 Transform:
   m_ObjectHideFlags: 1
@@ -438,67 +178,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 467262}
-  m_RootOrder: 16
---- !u!4 &428652
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 179892}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 467262}
-  m_RootOrder: 3
---- !u!4 &430084
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 159246}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 467262}
-  m_RootOrder: 8
---- !u!4 &431112
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 157148}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 467262}
-  m_RootOrder: 7
---- !u!4 &432650
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 169166}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 467262}
-  m_RootOrder: 13
---- !u!4 &435542
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 194712}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 467262}
-  m_RootOrder: 12
+  m_RootOrder: 2
 --- !u!4 &446034
 Transform:
   m_ObjectHideFlags: 1
@@ -510,31 +190,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 467262}
-  m_RootOrder: 15
---- !u!4 &449758
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 181620}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 467262}
-  m_RootOrder: 10
---- !u!4 &452930
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 119000}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 467262}
-  m_RootOrder: 9
+  m_RootOrder: 1
 --- !u!4 &458744
 Transform:
   m_ObjectHideFlags: 1
@@ -546,7 +202,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 467262}
-  m_RootOrder: 20
+  m_RootOrder: 6
 --- !u!4 &466614
 Transform:
   m_ObjectHideFlags: 1
@@ -558,7 +214,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 467262}
-  m_RootOrder: 18
+  m_RootOrder: 4
 --- !u!4 &467262
 Transform:
   m_ObjectHideFlags: 1
@@ -569,20 +225,6 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 485288}
-  - {fileID: 486560}
-  - {fileID: 413054}
-  - {fileID: 428652}
-  - {fileID: 486752}
-  - {fileID: 468366}
-  - {fileID: 407632}
-  - {fileID: 431112}
-  - {fileID: 430084}
-  - {fileID: 452930}
-  - {fileID: 449758}
-  - {fileID: 403808}
-  - {fileID: 435542}
-  - {fileID: 432650}
   - {fileID: 402630}
   - {fileID: 446034}
   - {fileID: 428356}
@@ -593,18 +235,6 @@ Transform:
   - {fileID: 498126}
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!4 &468366
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 116474}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 467262}
-  m_RootOrder: 5
 --- !u!4 &468972
 Transform:
   m_ObjectHideFlags: 1
@@ -616,43 +246,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 467262}
-  m_RootOrder: 17
---- !u!4 &485288
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 188770}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 467262}
-  m_RootOrder: 0
---- !u!4 &486560
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 137930}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 467262}
-  m_RootOrder: 1
---- !u!4 &486752
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100562}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 467262}
-  m_RootOrder: 4
+  m_RootOrder: 3
 --- !u!4 &498126
 Transform:
   m_ObjectHideFlags: 1
@@ -664,7 +258,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 467262}
-  m_RootOrder: 21
+  m_RootOrder: 7
 --- !u!114 &11405808
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -682,115 +276,6 @@ MonoBehaviour:
   resource: 9
   unlessHas: 08000000
   amountToIncrement: 1
---- !u!114 &11412580
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 194712}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4485538df31b94eabb7640be29789612, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cost: 2
-  workDuration: 0.1
-  setStaticActionName: CraftFirewoodFromBranches
-  ingredients:
-  - item: 5
-    amount: 8
-  products:
-  - item: 2
-    amount: 2
---- !u!114 &11415050
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 102576}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b85aefff0b5044ab9b17738c333eb61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cost: 1
-  workDuration: 1
-  setStaticActionName: dig treasure
-  resource: 6
-  amountToTake: 1
---- !u!114 &11416540
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 129982}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec886eef5ef35434797f05e364ed761e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cost: 4
-  workDuration: 2
-  setStaticActionName: CollectBranches
-  amountToHarvest: 2
-  maxAmountToCarry: 8
---- !u!114 &11416696
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 101166}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b85aefff0b5044ab9b17738c333eb61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cost: 0.75
-  workDuration: 0.15
-  setStaticActionName: PickUpOre
-  resource: 3
-  amountToTake: 1
---- !u!114 &11417930
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 181620}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e63a1f6a19014947ad8a8276602feac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cost: 3
-  workDuration: 3
-  setStaticActionName: HarvestOre
-  toolDamage: 0.5
-  resource: 3
-  harvestSource: 3
-  amountToHarvest: 2
-  maxAmountToCarry: 2
---- !u!114 &11419718
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 169166}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89e5ee28548d44f6fbb4e67e861a3a7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cost: 1
-  workDuration: 0.2
-  setStaticActionName: BreakDownNewTools
-  ingredients:
-  - item: 4
-    amount: 1
-  products:
-  - item: 3
-    amount: 1
-  toolDamage: 0.1
-  craftingStation: 2
 --- !u!114 &11425908
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -809,55 +294,6 @@ MonoBehaviour:
   resource: 7
   collectPOI: 11
   amountToCollect: 1
---- !u!114 &11432046
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 137930}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b85aefff0b5044ab9b17738c333eb61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cost: 0.5
-  workDuration: 0.1
-  setStaticActionName: PickUpLogs
-  resource: 1
-  amountToTake: 1
---- !u!114 &11432252
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 119000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e63a1f6a19014947ad8a8276602feac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cost: 2
-  workDuration: 2
-  setStaticActionName: HarvestLogs
-  toolDamage: 0.34
-  resource: 1
-  harvestSource: 5
-  amountToHarvest: 1
-  maxAmountToCarry: 1
---- !u!114 &11433050
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 188770}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1c69cc84e4f6fe4abc42a4099854004, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cost: 0.5
-  workDuration: 0.1
-  setStaticActionName: PickUpTool
 --- !u!114 &11434714
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -876,95 +312,6 @@ MonoBehaviour:
   resource: 11
   meditationPoint: 12
   neededAmount: 10
---- !u!114 &11437118
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 159246}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89e5ee28548d44f6fbb4e67e861a3a7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cost: 2
-  workDuration: 2
-  setStaticActionName: CraftNewTools
-  ingredients:
-  - item: 3
-    amount: 3
-  products:
-  - item: 4
-    amount: 2
-  toolDamage: 0.1
-  craftingStation: 2
---- !u!114 &11448900
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 121410}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2769096a69434679b14cd5a752d4457, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cost: 1.5
-  workDuration: 0.3
-  setStaticActionName: DropOffOre
-  itemToDrop: 3
---- !u!114 &11449268
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 157148}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89e5ee28548d44f6fbb4e67e861a3a7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cost: 4
-  workDuration: 4
-  setStaticActionName: CraftFirewood
-  ingredients:
-  - item: 1
-    amount: 5
-  products:
-  - item: 2
-    amount: 5
-  toolDamage: 0.34
-  craftingStation: 1
---- !u!114 &11455238
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 116474}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2769096a69434679b14cd5a752d4457, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cost: 0.5
-  workDuration: 0.1
-  setStaticActionName: DropOffLogs
-  itemToDrop: 1
---- !u!114 &11456790
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 179892}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2769096a69434679b14cd5a752d4457, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cost: 0.5
-  workDuration: 0.1
-  setStaticActionName: DropOffFirewood
-  itemToDrop: 2
 --- !u!114 &11457600
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1028,21 +375,24 @@ MonoBehaviour:
   workDuration: 1
   setStaticActionName: bash
   strengthRequired: 5
---- !u!114 &11489406
+--- !u!114 &11477976
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100562}
+  m_GameObject: {fileID: 102576}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2769096a69434679b14cd5a752d4457, type: 3}
+  m_Script: {fileID: 11500000, guid: 7873a13bf1490b04f9819453e9361043, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cost: 1
-  workDuration: 0.2
-  setStaticActionName: DropOffNewTools
-  itemToDrop: 4
+  workDuration: 0
+  setStaticActionName: dig treasure
+  required: 7
+  resource: 6
+  collectPOI: 14
+  amountToCollect: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

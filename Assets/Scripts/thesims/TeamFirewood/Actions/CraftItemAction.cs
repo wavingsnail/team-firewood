@@ -25,12 +25,12 @@ public class CraftItemAction : BasicCraftItemAction {
     }
 
     protected override bool OnDone(GoapAgent agent, WithContext context) {
-        var backpack = agent.GetComponent<Container>();
-        var tool = backpack.tool.GetComponent<ToolComponent>();
+        var inventory = agent.GetComponent<Container>();
+        var tool = inventory.tool.GetComponent<ToolComponent>();
         tool.use(toolDamage);
         if (tool.destroyed()) {
-            Destroy(backpack.tool);
-            backpack.tool = null;
+            Destroy(inventory.tool);
+            inventory.tool = null;
         }
         return base.OnDone(agent, context);
     }

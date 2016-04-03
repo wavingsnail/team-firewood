@@ -11,7 +11,7 @@ namespace TeamFirewood {
  * planner.
  */
 public abstract class Worker : GoapAgent {
-    public Container backpack;
+    public Container inventory;
     public float moveSpeed = 1;
     private readonly State state = new State();
 
@@ -20,19 +20,19 @@ public abstract class Worker : GoapAgent {
 
         foreach (var item in EnumUtils.EnumValues<Item>()) {
             if (item == Item.None) continue;
-            state[item.ToString()] = new StateValue(backpack.items[item]);
+			state[item.ToString()] = new StateValue(inventory.items[item]);
         }
-        state["hasTool"] = new StateValue(backpack.tool != null);
+        state["hasTool"] = new StateValue(inventory.tool != null);
     }
 
     protected void Start() {
-        if (backpack == null) {
-            backpack = gameObject.GetComponent<Container>();
+        if (inventory == null) {
+            inventory = gameObject.GetComponent<Container>();
         }
-        if (backpack.tool == null) {
-            var prefab = Resources.Load<GameObject>(backpack.toolType);
+        if (inventory.tool == null) {
+            var prefab = Resources.Load<GameObject>(inventory.toolType);
             var tool = Instantiate(prefab, transform.position, transform.rotation) as GameObject;
-            backpack.tool = tool;
+            inventory.tool = tool;
             tool.transform.parent = transform;
         }
     }
@@ -40,9 +40,9 @@ public abstract class Worker : GoapAgent {
     public override State GetState() {
         foreach (var item in EnumUtils.EnumValues<Item>()) {
             if (item == Item.None) continue;
-            state[item.ToString()].value = backpack.items[item];
+            state[item.ToString()].value = inventory.items[item];
         }
-        state["hasTool"].value = backpack.tool != null;
+        state["hasTool"].value = inventory.tool != null;
         state["x"] = new StateValue(transform.position.x);
         state["y"] = new StateValue(transform.position.y);
 

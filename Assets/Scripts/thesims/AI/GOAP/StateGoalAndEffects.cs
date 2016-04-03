@@ -56,7 +56,7 @@ namespace Ai.Goap {
 			case ModificationType.Add:
 				return new Condition (cond.comparison, (int)cond.value - (int)this.value);
 			default:
-				return null; //TODO: is this reachable?
+				return null;
 			}
 		}
 
@@ -139,24 +139,14 @@ namespace Ai.Goap {
 				else{
 					Goal current = currentGoal [agentGoal.Key];
 
-
 					//go through parent node's conditions
 					foreach (KeyValuePair<string, Condition> kvp in current) {
 
 						// If initial state without this parameter, irrelevant and continue
-						if (!this.ContainsKey (kvp.Key)) {
-							//Debug.Log("Agent initial state: " + GoapAgent.PrettyPrint(this) + " doesnt contain " + kvp.Key);
-						} 
-						else {
-
-							//Debug.Log ("Checking " + kvp.Key);
-
-
+						if(this.ContainsKey (kvp.Key)) {
+							
 							// If child node doesnt contain this goal, it is satisfied!
-							if (!possible.ContainsKey (kvp.Key)) {
-								//Debug.Log ("new goal is better, doesnt require " + kvp.Key);
-								res = true;
-							} 
+							if (!possible.ContainsKey (kvp.Key)) {res = true;} 
 
 							// Else - check if child goal is closer to inital state
 							else {
@@ -169,11 +159,9 @@ namespace Ai.Goap {
 										continue;
 									}
 									if (sv.CheckCondition (currCond) && !sv.CheckCondition (possCond)) {
-										//Debug.Log ("this Goal isnt any better! abort!");
 										return false;
 									}
 									if (!sv.CheckCondition (currCond) && sv.CheckCondition (possCond)) {
-										//Debug.Log ("new goal is better, it now satisfies condition");
 										res = true;
 										continue;
 									}
@@ -182,38 +170,29 @@ namespace Ai.Goap {
 									//assume both goals have same compare type
 									switch (currCond.comparison) {
 									case CompareType.Equal:
-										//Debug.Log ("Equal - sv.value: " + sv.value + ", possCond.value: " + possCond.value + ", currCond.value: " + currCond.value);
 										res = (Mathf.Abs ((int)sv.value - (int)currCond.value)) < (Mathf.Abs ((int)sv.value - (int)possCond.value));
 										break;
 									case CompareType.LessThan:
-										//Debug.Log ("LessThan - sv.value: " + sv.value + ", possCond.value: " + possCond.value + ", currCond.value: " + currCond.value);
 										res = ((int)possCond.value - (int)sv.value) > ((int)currCond.value - (int)sv.value);
 										break;
 									case CompareType.LessThanOrEqual:
-										//Debug.Log ("LessThanOrEqual - sv.value: " + sv.value + ", possCond.value: " + possCond.value + ", currCond.value: " + currCond.value);
 										res = ((int)possCond.value - (int)sv.value) > ((int)currCond.value - (int)sv.value);
 										break;
 									case CompareType.MoreThan:
-										//Debug.Log ("MoreThan - sv.value: " + sv.value + ", possCond.value: " + possCond.value + ", currCond.value: " + currCond.value);
 										res = ((int)possCond.value - (int)sv.value) < ((int)currCond.value - (int)sv.value);
 										break;
 									case CompareType.MoreThanOrEqual:
-										//Debug.Log ("MoreThanOrEqual - sv.value: " + sv.value + ", possCond.value: " + possCond.value + ", currCond.value: " + currCond.value);
 										res = ((int)possCond.value - (int)sv.value) < ((int)currCond.value - (int)sv.value);
 										break;
 									case CompareType.NotEqual:
-										//Debug.Log ("NotEqual - sv.value: " + sv.value + ", possCond.value: " + possCond.value + ", currCond.value: " + currCond.value);
 										res = (Mathf.Abs ((int)sv.value - (int)currCond.value)) > (Mathf.Abs ((int)sv.value - (int)possCond.value));
 										break;
 									}
 
 									//if bool check if new matches while old doesnt
 								} else if (sv.value.GetType () == typeof(bool)) {
-									//Debug.Log ("2");
 									//assuming booleans will only get ModificationType.Set
 									res = (sv.value != currCond.value && sv.value == possCond.value);
-								} else {
-									//Debug.Log ("3");
 								}
 
 								//if new cond worse - return false
@@ -283,7 +262,6 @@ namespace Ai.Goap {
 			//Start with empty new goal, fill it with reversed conditions.
 			Goal newGoal = Goal.pool.Borrow ();
 			newGoal.Clear ();
-
 
 			List<string> keys = new List<string> (goal.Keys);
 			foreach(string k in keys){

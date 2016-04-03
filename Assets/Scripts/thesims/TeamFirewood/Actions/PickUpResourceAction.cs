@@ -36,8 +36,8 @@ public class PickUpResourceAction : GoapAction {
         supplyPile.items[resource] -= amountToTake;
 
         // TODO: Play animations when a task is done.
-        var backpack = agent.GetComponent<Container>();
-        backpack.items[resource] += amountToTake;
+        var inventory = agent.GetComponent<Container>();
+        inventory.items[resource] += amountToTake;
         
         return base.OnDone(agent, context);
     }

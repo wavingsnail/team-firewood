@@ -173,10 +173,7 @@ namespace Ai.Goap {
 				// Add target preconditions to new goal
 				foreach (KeyValuePair<string, Condition> kvp in this.preconditions) {
 					if (!newGoal [currAgent].ContainsKey (kvp.Key)) {
-						//Debug.Log ("adding pre condition " + kvp.Key + ": " + GoapAgent.PrettyPrint (kvp.Value) + " to new goal");
 						newGoal [currAgent].Add (kvp.Key, new Condition (kvp.Value.comparison, kvp.Value.value));
-					} else {
-						//Debug.Log ("Cant add precondition. Already have " + kvp.Key + " in this goal.");
 					}
 
 				}
