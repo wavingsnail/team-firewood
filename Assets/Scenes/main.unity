@@ -989,7 +989,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1402324191}
   m_Layer: 0
-  m_Name: Peeps
+  m_Name: IslandCharacters
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1482,7 +1482,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1933896194}
   m_Layer: 0
-  m_Name: Places
+  m_Name: IslandPlaces
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
