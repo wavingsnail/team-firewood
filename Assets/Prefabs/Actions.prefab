@@ -676,7 +676,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef698e1f76d624c4bb78a14f87700006, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 5
+  cost: 1
   workDuration: 2
   setStaticActionName: pushups
   resource: 9
@@ -977,11 +977,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cost: 1
-  workDuration: 2
+  workDuration: 1
   setStaticActionName: mushrooms
   resource: 11
   harvestSource: 13
-  amountToCollect: 1
+  amountToCollect: 2
 --- !u!114 &11472928
 MonoBehaviour:
   m_ObjectHideFlags: 1
