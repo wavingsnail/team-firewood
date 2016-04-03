@@ -15,6 +15,7 @@ public abstract class Worker : GoapAgent {
     public float moveSpeed = 1;
     private readonly State state = new State();
 
+
     protected override void Awake() {
         base.Awake();
 
@@ -48,6 +49,7 @@ public abstract class Worker : GoapAgent {
 
         return state;
     }
+
 
     public override void PlanFailed(WorldGoal failedGoal) {
         // Not handling this here since we are making sure our goals will always

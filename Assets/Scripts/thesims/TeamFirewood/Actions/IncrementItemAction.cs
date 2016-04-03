@@ -12,7 +12,7 @@ namespace TeamFirewood {
 			//yoel: no preconditions or target effects for pushups.
 			if (unlessHas != null) {
 				foreach (Item item in unlessHas) {
-					AddPrecondition(item.ToString(), CompareType.Equal, false);	
+					AddPrecondition(item.ToString(), CompareType.LessThan, 1);	
 				}
 			}
 			AddEffect(resource.ToString(), ModificationType.Add, amountToIncrement);

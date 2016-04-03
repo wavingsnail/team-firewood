@@ -22,6 +22,8 @@ namespace Ai.Goap {
 	    public Effects effects = new Effects();
 	    public Effects targetEffects = new Effects();
 
+		public Sprite actionSprite;
+
 		protected void Awake(){
 			actionName = setStaticActionName;
 		}
@@ -214,9 +216,9 @@ namespace Ai.Goap {
 	        public bool Perform(GoapAgent agent) {
 				
 				SpriteRenderer sr = agent.transform.GetChild (0).GetComponent<SpriteRenderer> ();
-				if (agent.actionImages.ContainsKey (actionName)) {
-					sr.sprite = agent.actionImages [actionName];
-				}
+				if (actionData.actionSprite != null) {
+					agent.changeSprite (actionData.actionSprite);
+				} 
 
 	            if (Mathf.Approximately(startTime, 0f)) {
 	                if (!actionData.CanDoNow(agent, target)) {
@@ -227,8 +229,7 @@ namespace Ai.Goap {
 	            }
 
 	            if (Time.time - startTime > actionData.workDuration) {
-					sr.sprite = agent.actionImages ["Default"];
-	                DebugUtils.Log(GetType().Name + " Time is up - am I done?");
+					agent.changeSprite (agent.defaultSprite);
 	                return actionData.OnDone(agent, this);
 	            }
 	            return true;
