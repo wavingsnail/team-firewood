@@ -8,8 +8,8 @@ using Priority_Queue;
 namespace Ai.Goap
 {
 	/**
- * Plans what actions can be completed in order to fulfill a goal state.
- */
+ 	* Plans what actions can be completed in order to fulfill a goal state.
+ 	*/
 	public static class GoapPlanner
 	{
 		// This seems like enough...
@@ -32,6 +32,7 @@ namespace Ai.Goap
 
 			var currentNode = Node.pool.Borrow ();
 			currentNode.Init (null, 0f, goal, null, null);
+			currentNode.position = Vector2.zero;
 
 			openSet.Enqueue (currentNode, 0f);
 			int iterations = 0;
@@ -44,15 +45,12 @@ namespace Ai.Goap
 				//TODO: delete print
 				//Debug.Log ("current world goal: " + GoapAgent.PrettyPrint(currentNode.goal));
 
-					
-
 				if (DoConditionsApply (currentNode.goal[agent], agent.GetState ())) {
 					//DebugUtils.LogError("Selected plan with cost: " + currentNode.Score);
-					var plan = UnwrapPlan (currentNode); // TODO check if unwrap plan is good for our needs
+					var plan = UnwrapPlan (currentNode);
 
 					// Return all nodes.
 					Node.pool.ReturnAll ();
-
 
 					// Check for leaks in the pools:
 					//DebugUtils.LogError("Nodes: " + Node.pool.Count);
@@ -73,20 +71,18 @@ namespace Ai.Goap
 
 					if (agent.GetState().isGoalCloser(currentNode.goal, possibleChildGoal)) {
 
+						List<IStateful> targets = action.GetAllTargets (agent);
 
 						// No targets, move to next action
-						if (action.GetAllTargets (agent).Count == 0) {
+						if (targets.Count == 0) {
 							continue;
 						}
 
-
 						IStateful closestTarget = null;
 						float travelCost = 0f;
-						foreach (var target in action.GetAllTargets(agent)) {
+						foreach (var target in targets) {
 							//TODO: save only closest target #omri
 							closestTarget = target;
-
-
 
 							//TODO: check target preconds, make sure this works
 							if (goal.ContainsKey (target)) {
@@ -96,7 +92,22 @@ namespace Ai.Goap
 							}
 
 							if (action.RequiresInRange ()) {
-								//TODO: this
+								var obj = target as Component;
+								// TODO: Move this to the action's effects. Instead of
+								//       action.cost, use action.CalculateCost(state, target)
+								//       that will return action.cost + travelCost (or
+								//       something else if the specific action requires
+								//       it).
+//								currentPosition.Set ((int)childState [agent] ["x"].value, (int)childState [agent] ["y"].value);
+								currentNode.position.Set (currentNode.position.x, currentNode.position.y);
+								var travelVector = (Vector2)obj.transform.position - currentNode.position;
+								travelCost = travelVector.magnitude;
+
+//								var x = StateValue.NormalizeValue (obj.transform.position.x);
+//								var y = StateValue.NormalizeValue (obj.transform.position.y);
+//								childState [agent] ["x"] = new StateValue (x);
+//								childState [agent] ["y"] = new StateValue (y);
+								//DebugUtils.LogError(travelCost + " to " + obj.name);
 							}
 						}
 
@@ -151,9 +162,7 @@ namespace Ai.Goap
 			}
 			return true;
 		}
-
-
-
+			
 		/// <summary>
 		/// Apply the stateChange to the currentState.
 		/// </summary>
@@ -211,8 +220,7 @@ namespace Ai.Goap
 			//result.Reverse ();
 			return new Queue<GoapAction.WithContext> (result);
 		}
-
-
+			
 		/// <summary>
 		/// This is needed to deep-compare the states by value and not by reference.
 		/// </summary>
@@ -300,6 +308,7 @@ namespace Ai.Goap
 			public float cachedHeuristicCost = float.NegativeInfinity;
 			public WorldGoal goal;
 			public WorldState state;
+			public Vector2 position;
 			public GoapAction.WithContext action = GoapAction.WithContext.pool.Borrow ();
 
 			public float Score {

@@ -86,6 +86,21 @@ namespace Ai.Goap {
 	        return list;
 	    }
 
+//		public static IStateful GetClosestTarget(Vector2 currentPosition, GoapAgent agent)
+//		{
+//			Vector2 targetLocation = Vector2.zero;
+//			var targets = GetTargets ();
+//
+//
+//
+//			foreach (var target in targets) {
+//				var result = target as Component;
+//				if (result.transform.) {
+//					
+//				}
+//			}
+//		}
+
 	    /// <summary>
 	    /// Returns a WorldGoal that contains all the preconditions that the agent
 	    /// must satisfy.
@@ -199,9 +214,7 @@ namespace Ai.Goap {
 	            isInRange = false;
 	            isDone = false;
 	        }
-
-
-
+				
 	        public WithContext Clone() {
 	            var clone = pool.Borrow();
 	            clone.Init(target, actionData);
