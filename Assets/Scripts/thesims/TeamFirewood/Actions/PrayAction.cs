@@ -33,7 +33,6 @@ namespace TeamFirewood {
 			// Done harvesting.
 			var backpack = agent.GetComponent<Container>();
 			backpack.items[resource] -= neededAmount;
-//			AddEffect("has" + Achievement.ToString(), ModificationType.Set, true);
 			return base.OnDone(agent, context);
 		}
 	}

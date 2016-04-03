@@ -6,7 +6,7 @@ namespace TeamFirewood {
 		private readonly State state = new State();
 
 		protected override void Awake() {
-			state["has" + Item.Mushrooms] = new StateValue(RandomUtils.RandBool(0.5f));
+			state[Item.Mushrooms.ToString()] = new StateValue(RandomUtils.RandBool(0.5f));
 			base.Awake();
 		}
 
@@ -17,7 +17,7 @@ namespace TeamFirewood {
 		}
 
 		protected void Update() {
-			state["has" + Item.Mushrooms].value = RandomUtils.RandBool(0.5f);
+			state[Item.Mushrooms.ToString()].value = RandomUtils.RandBool(0.5f);
 			enabled = false;
 		}
 	}

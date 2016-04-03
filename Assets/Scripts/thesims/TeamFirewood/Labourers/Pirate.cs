@@ -15,7 +15,6 @@ namespace TeamFirewood {
 			goal[Item.Advice.ToString()] = new Condition(CompareType.MoreThanOrEqual, 1);
 
 			//TODO: uncomment this goal:
-			//goal["has" + Item.Treasure] = new Condition(CompareType.Equal, true);
 			worldGoal[this] = goal;
 		}
 
