@@ -92,6 +92,14 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1933896194}
     m_Modifications:
+    - target: {fileID: 11437370, guid: b580ac8697647864494690b2ed14df0a, type: 2}
+      propertyPath: targetImgs.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11437370, guid: b580ac8697647864494690b2ed14df0a, type: 2}
+      propertyPath: _actionEffects.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 476110, guid: b580ac8697647864494690b2ed14df0a, type: 2}
       propertyPath: m_LocalPosition.x
       value: 40.6
@@ -141,6 +149,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11437370, guid: b580ac8697647864494690b2ed14df0a, type: 2}
+      propertyPath: targetImgs.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300004, guid: 147938aca637eef40a1043fc8da3c932,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b580ac8697647864494690b2ed14df0a, type: 2}
   m_IsPrefabParent: 0
@@ -364,6 +377,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _actionEffects: []
+  targetImgs: []
   type: 9
 --- !u!114 &290012683 stripped
 MonoBehaviour:
@@ -406,6 +420,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _actionEffects: []
+  targetImgs: []
   type: 13
 --- !u!4 &312352568
 Transform:
@@ -496,6 +511,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _actionEffects: []
+  targetImgs: []
   type: 12
 --- !u!4 &369065000
 Transform:
@@ -600,6 +616,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _actionEffects: []
+  targetImgs: []
   type: 11
 --- !u!114 &457370717
 MonoBehaviour:
@@ -723,6 +740,14 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1933896194}
     m_Modifications:
+    - target: {fileID: 11437370, guid: b580ac8697647864494690b2ed14df0a, type: 2}
+      propertyPath: targetImgs.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11437370, guid: b580ac8697647864494690b2ed14df0a, type: 2}
+      propertyPath: _actionEffects.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 476110, guid: b580ac8697647864494690b2ed14df0a, type: 2}
       propertyPath: m_LocalPosition.x
       value: 15.3
@@ -776,6 +801,11 @@ Prefab:
       propertyPath: m_Name
       value: BrickWall
       objectReference: {fileID: 0}
+    - target: {fileID: 11437370, guid: b580ac8697647864494690b2ed14df0a, type: 2}
+      propertyPath: targetImgs.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300004, guid: 147938aca637eef40a1043fc8da3c932,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b580ac8697647864494690b2ed14df0a, type: 2}
   m_IsPrefabParent: 0
@@ -850,6 +880,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1933896194}
     m_Modifications:
+    - target: {fileID: 11437370, guid: b580ac8697647864494690b2ed14df0a, type: 2}
+      propertyPath: targetImgs.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 476110, guid: b580ac8697647864494690b2ed14df0a, type: 2}
       propertyPath: m_LocalPosition.x
       value: 24.2
@@ -903,6 +937,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11437370, guid: b580ac8697647864494690b2ed14df0a, type: 2}
+      propertyPath: targetImgs.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300004, guid: 147938aca637eef40a1043fc8da3c932,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b580ac8697647864494690b2ed14df0a, type: 2}
   m_IsPrefabParent: 0
@@ -1007,6 +1046,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _actionEffects: []
+  targetImgs:
+  - {fileID: 21300004, guid: 147938aca637eef40a1043fc8da3c932, type: 3}
   type: 10
 --- !u!114 &895977059 stripped
 MonoBehaviour:
@@ -1400,6 +1441,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _actionEffects: []
+  targetImgs: []
   type: 13
 --- !u!4 &1241034659
 Transform:
@@ -1421,6 +1463,14 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1933896194}
     m_Modifications:
+    - target: {fileID: 11437370, guid: b580ac8697647864494690b2ed14df0a, type: 2}
+      propertyPath: targetImgs.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11437370, guid: b580ac8697647864494690b2ed14df0a, type: 2}
+      propertyPath: _actionEffects.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 476110, guid: b580ac8697647864494690b2ed14df0a, type: 2}
       propertyPath: m_LocalPosition.x
       value: -0.7
@@ -1474,6 +1524,11 @@ Prefab:
       propertyPath: m_Name
       value: BrickWall
       objectReference: {fileID: 0}
+    - target: {fileID: 11437370, guid: b580ac8697647864494690b2ed14df0a, type: 2}
+      propertyPath: targetImgs.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300004, guid: 147938aca637eef40a1043fc8da3c932,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b580ac8697647864494690b2ed14df0a, type: 2}
   m_IsPrefabParent: 0
@@ -1668,6 +1723,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _actionEffects: []
+  targetImgs:
+  - {fileID: 21300004, guid: 147938aca637eef40a1043fc8da3c932, type: 3}
   type: 10
 --- !u!1 &1466209686
 GameObject:
@@ -1710,6 +1767,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _actionEffects: []
+  targetImgs: []
   type: 14
 --- !u!1 &1479561665
 GameObject:
@@ -1740,6 +1798,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _actionEffects: []
+  targetImgs:
+  - {fileID: 21300004, guid: 147938aca637eef40a1043fc8da3c932, type: 3}
   type: 10
 --- !u!1 &1523743080
 GameObject:
@@ -1770,6 +1830,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _actionEffects: []
+  targetImgs: []
   type: 13
 --- !u!4 &1523743082
 Transform:
@@ -1813,6 +1874,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _actionEffects: []
+  targetImgs:
+  - {fileID: 21300004, guid: 147938aca637eef40a1043fc8da3c932, type: 3}
   type: 10
 --- !u!1 &1573792292
 GameObject:
@@ -2428,6 +2491,14 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1933896194}
     m_Modifications:
+    - target: {fileID: 11437370, guid: b580ac8697647864494690b2ed14df0a, type: 2}
+      propertyPath: targetImgs.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11437370, guid: b580ac8697647864494690b2ed14df0a, type: 2}
+      propertyPath: _actionEffects.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 476110, guid: b580ac8697647864494690b2ed14df0a, type: 2}
       propertyPath: m_LocalPosition.x
       value: 8.2
@@ -2477,6 +2548,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11437370, guid: b580ac8697647864494690b2ed14df0a, type: 2}
+      propertyPath: targetImgs.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300004, guid: 147938aca637eef40a1043fc8da3c932,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b580ac8697647864494690b2ed14df0a, type: 2}
   m_IsPrefabParent: 0
@@ -2522,6 +2598,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _actionEffects: []
+  targetImgs:
+  - {fileID: 21300004, guid: 147938aca637eef40a1043fc8da3c932, type: 3}
   type: 10
 --- !u!1 &2065304799
 GameObject:

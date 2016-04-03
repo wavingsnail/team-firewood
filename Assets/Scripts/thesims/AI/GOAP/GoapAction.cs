@@ -243,6 +243,8 @@ namespace Ai.Goap {
 
 	            if (Time.time - startTime > actionData.workDuration) {
 					agent.changeSprite (agent.defaultSprite);
+					if(this.target is ActionTarget)
+						((ActionTarget)this.target).nxtImg ();
 	                return actionData.OnDone(agent, this);
 	            }
 	            return true;
