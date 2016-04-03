@@ -273,6 +273,7 @@ MonoBehaviour:
   cost: 1
   workDuration: 2
   setStaticActionName: pushups
+  actionSprite: {fileID: 21300010, guid: d75ecf2dbefc46744971b2a36b94d4c9, type: 3}
   resource: 9
   unlessHas: 08000000
   amountToIncrement: 1
@@ -290,6 +291,7 @@ MonoBehaviour:
   cost: 1
   workDuration: 1
   setStaticActionName: ask advice
+  actionSprite: {fileID: 0}
   required: 12
   resource: 7
   collectPOI: 11
@@ -308,6 +310,7 @@ MonoBehaviour:
   cost: 1
   workDuration: 5
   setStaticActionName: meditate
+  actionSprite: {fileID: 21300006, guid: 966abd99e482e864980a52487c915425, type: 3}
   Achievement: 10
   resource: 11
   meditationPoint: 12
@@ -326,6 +329,7 @@ MonoBehaviour:
   cost: 1
   workDuration: 1
   setStaticActionName: mushrooms
+  actionSprite: {fileID: 21300004, guid: 966abd99e482e864980a52487c915425, type: 3}
   resource: 11
   harvestSource: 13
   amountToCollect: 2
@@ -343,6 +347,7 @@ MonoBehaviour:
   cost: 1
   workDuration: 1
   setStaticActionName: dig key
+  actionSprite: {fileID: 0}
   resource: 8
   harvestSource: 8
   amountToCollect: 1
@@ -360,6 +365,7 @@ MonoBehaviour:
   cost: 1
   workDuration: 1
   setStaticActionName: open door
+  actionSprite: {fileID: 0}
 --- !u!114 &11475618
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -374,6 +380,7 @@ MonoBehaviour:
   cost: 1
   workDuration: 1
   setStaticActionName: bash
+  actionSprite: {fileID: 0}
   strengthRequired: 5
 --- !u!114 &11477976
 MonoBehaviour:
@@ -389,6 +396,7 @@ MonoBehaviour:
   cost: 1
   workDuration: 0
   setStaticActionName: dig treasure
+  actionSprite: {fileID: 0}
   required: 7
   resource: 6
   collectPOI: 14

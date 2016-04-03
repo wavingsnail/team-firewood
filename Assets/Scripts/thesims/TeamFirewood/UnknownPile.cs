@@ -29,8 +29,6 @@ namespace TeamFirewood {
 		}
 
 		public override State GetState() {
-			// Enable to check again if has branches.
-			enabled = true;
 			return state;
 		}
 

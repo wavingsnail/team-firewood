@@ -17,26 +17,23 @@ namespace Ai.Goap {
 
 	    [Tooltip("List of possible actions the agent can perform")]
 	    public List<GoapAction> availableActions;
-
-		public string[] actionNames;
-		public Sprite[] actionSprites;
-		public Dictionary<string, Sprite> actionImages = new Dictionary<string, Sprite>();
+		public Sprite defaultSprite;
 
 	    private FSM stateMachine = new FSM();
 	    private Queue<GoapAction.WithContext> currentActions = new Queue<GoapAction.WithContext>();
 
 	    protected virtual void Awake() {
-			SpriteRenderer sr = transform.GetChild (0).GetComponent<SpriteRenderer> ();
-			actionImages.Add ("Default", sr.sprite);
-			for (int i = 0; i < actionNames.Length; i++) {
-				actionImages.Add (actionNames[i], actionSprites[i]);
-			}
 	        stateMachine.PushState(IdleState);
 	    }
 
 	    protected void Update() {
 	        stateMachine.Update(gameObject);
 	    }
+
+
+		public void changeSprite(Sprite newSprite){
+			transform.GetChild (0).GetComponent <SpriteRenderer>().sprite = newSprite;
+		}
 
 	    /// <summary>
 	    /// Returns the current state of the object for planning purposes.
