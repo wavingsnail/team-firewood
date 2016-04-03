@@ -6,7 +6,7 @@ public class Branches : PointOfInterest {
     private readonly State state = new State();
 
     protected override void Awake() {
-        state["has" + Item.Branches] = new StateValue(RandomUtils.RandBool(0.5f));
+		state[Item.Branches.ToString()] = new StateValue(RandomUtils.RandBool(0.5f));
         base.Awake();
     }
 
@@ -17,7 +17,7 @@ public class Branches : PointOfInterest {
     }
 
     protected void Update() {
-        state["has" + Item.Branches].value = RandomUtils.RandBool(0.5f);
+		state[Item.Branches.ToString()].value = RandomUtils.RandBool(0.5f);
         enabled = false;
     }
 }

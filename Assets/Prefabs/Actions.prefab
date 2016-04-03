@@ -103,7 +103,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 446034}
-  - 114: {fileID: 11405754}
+  - 114: {fileID: 11472928}
   m_Layer: 0
   m_Name: zDigForKey
   m_TagString: Untagged
@@ -665,22 +665,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 467262}
   m_RootOrder: 21
---- !u!114 &11405754
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 114454}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5abf0bf9b24ae834583f21841d9cbb30, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cost: 1
-  workDuration: 1
-  setStaticActionName: None
-  item: 8
-  whereToLook: 8
 --- !u!114 &11405808
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -711,7 +695,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 2
   workDuration: 0.1
-  setStaticActionName: None
+  setStaticActionName: CraftFirewoodFromBranches
   ingredients:
   - item: 5
     amount: 8
@@ -731,7 +715,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 1
   workDuration: 1
-  setStaticActionName: None
+  setStaticActionName: dig treasure
   resource: 6
   amountToTake: 1
 --- !u!114 &11416540
@@ -747,7 +731,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 4
   workDuration: 2
-  setStaticActionName: None
+  setStaticActionName: CollectBranches
   amountToHarvest: 2
   maxAmountToCarry: 8
 --- !u!114 &11416696
@@ -763,7 +747,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 0.75
   workDuration: 0.15
-  setStaticActionName: None
+  setStaticActionName: PickUpOre
   resource: 3
   amountToTake: 1
 --- !u!114 &11417930
@@ -779,7 +763,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 3
   workDuration: 3
-  setStaticActionName: None
+  setStaticActionName: HarvestOre
   toolDamage: 0.5
   resource: 3
   harvestSource: 3
@@ -798,7 +782,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 1
   workDuration: 0.2
-  setStaticActionName: None
+  setStaticActionName: BreakDownNewTools
   ingredients:
   - item: 4
     amount: 1
@@ -820,7 +804,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 1
   workDuration: 1
-  setStaticActionName: None
+  setStaticActionName: ask advice
   required: 12
   resource: 7
   collectPOI: 11
@@ -838,7 +822,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 0.5
   workDuration: 0.1
-  setStaticActionName: None
+  setStaticActionName: PickUpLogs
   resource: 1
   amountToTake: 1
 --- !u!114 &11432252
@@ -854,7 +838,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 2
   workDuration: 2
-  setStaticActionName: None
+  setStaticActionName: HarvestLogs
   toolDamage: 0.34
   resource: 1
   harvestSource: 5
@@ -873,7 +857,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 0.5
   workDuration: 0.1
-  setStaticActionName: None
+  setStaticActionName: PickUpTool
 --- !u!114 &11434714
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -887,7 +871,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 1
   workDuration: 5
-  setStaticActionName: None
+  setStaticActionName: meditate
   Achievement: 10
   resource: 11
   meditationPoint: 12
@@ -905,7 +889,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 2
   workDuration: 2
-  setStaticActionName: None
+  setStaticActionName: CraftNewTools
   ingredients:
   - item: 3
     amount: 3
@@ -927,7 +911,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 1.5
   workDuration: 0.3
-  setStaticActionName: None
+  setStaticActionName: DropOffOre
   itemToDrop: 3
 --- !u!114 &11449268
 MonoBehaviour:
@@ -942,7 +926,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 4
   workDuration: 4
-  setStaticActionName: None
+  setStaticActionName: CraftFirewood
   ingredients:
   - item: 1
     amount: 5
@@ -964,7 +948,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 0.5
   workDuration: 0.1
-  setStaticActionName: None
+  setStaticActionName: DropOffLogs
   itemToDrop: 1
 --- !u!114 &11456790
 MonoBehaviour:
@@ -979,7 +963,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 0.5
   workDuration: 0.1
-  setStaticActionName: None
+  setStaticActionName: DropOffFirewood
   itemToDrop: 2
 --- !u!114 &11457600
 MonoBehaviour:
@@ -994,9 +978,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 1
   workDuration: 2
-  setStaticActionName: None
+  setStaticActionName: mushrooms
   resource: 11
   harvestSource: 13
+  amountToCollect: 1
+--- !u!114 &11472928
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 114454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14d8c22dc9edfe444bdc71d5e6aac403, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cost: 1
+  workDuration: 1
+  setStaticActionName: dig key
+  resource: 8
+  harvestSource: 8
   amountToCollect: 1
 --- !u!114 &11474036
 MonoBehaviour:
@@ -1011,7 +1012,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 1
   workDuration: 1
-  setStaticActionName: None
+  setStaticActionName: open door
 --- !u!114 &11475618
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1025,7 +1026,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 1
   workDuration: 1
-  setStaticActionName: None
+  setStaticActionName: bash
   strengthRequired: 5
 --- !u!114 &11489406
 MonoBehaviour:
@@ -1040,7 +1041,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 1
   workDuration: 0.2
-  setStaticActionName: None
+  setStaticActionName: DropOffNewTools
   itemToDrop: 4
 --- !u!1001 &100100000
 Prefab:

@@ -11,7 +11,7 @@ public class CollectBranches : GoapAction {
     protected virtual void Awake() {
         AddPrecondition(resource.ToString(), CompareType.LessThan, maxAmountToCarry);
         AddEffect(resource.ToString(), ModificationType.Add, amountToHarvest);
-        AddTargetPrecondition("has" + resource, CompareType.Equal, true);
+		AddTargetPrecondition(resource.ToString(), CompareType.Equal, true);
     }
 
     protected void Start() {

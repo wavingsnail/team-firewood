@@ -145,16 +145,16 @@ namespace Ai.Goap {
 
 						// If initial state without this parameter, irrelevant and continue
 						if (!this.ContainsKey (kvp.Key)) {
-							Debug.Log("Agent initial state: " + GoapAgent.PrettyPrint(this) + " doesnt contain " + kvp.Key);
+							//Debug.Log("Agent initial state: " + GoapAgent.PrettyPrint(this) + " doesnt contain " + kvp.Key);
 						} 
 						else {
 
-							Debug.Log ("Checking " + kvp.Key);
+							//Debug.Log ("Checking " + kvp.Key);
 
 
 							// If child node doesnt contain this goal, it is satisfied!
 							if (!possible.ContainsKey (kvp.Key)) {
-								Debug.Log ("new goal is better, doesnt require " + kvp.Key);
+								//Debug.Log ("new goal is better, doesnt require " + kvp.Key);
 								res = true;
 							} 
 
@@ -169,11 +169,11 @@ namespace Ai.Goap {
 										continue;
 									}
 									if (sv.CheckCondition (currCond) && !sv.CheckCondition (possCond)) {
-										Debug.Log ("this Goal isnt any better! abort!");
+										//Debug.Log ("this Goal isnt any better! abort!");
 										return false;
 									}
 									if (!sv.CheckCondition (currCond) && sv.CheckCondition (possCond)) {
-										Debug.Log ("new goal is better, it now satisfies condition");
+										//Debug.Log ("new goal is better, it now satisfies condition");
 										res = true;
 										continue;
 									}
@@ -182,43 +182,43 @@ namespace Ai.Goap {
 									//assume both goals have same compare type
 									switch (currCond.comparison) {
 									case CompareType.Equal:
-										Debug.Log ("Equal - sv.value: " + sv.value + ", possCond.value: " + possCond.value + ", currCond.value: " + currCond.value);
+										//Debug.Log ("Equal - sv.value: " + sv.value + ", possCond.value: " + possCond.value + ", currCond.value: " + currCond.value);
 										res = (Mathf.Abs ((int)sv.value - (int)currCond.value)) < (Mathf.Abs ((int)sv.value - (int)possCond.value));
 										break;
 									case CompareType.LessThan:
-										Debug.Log ("LessThan - sv.value: " + sv.value + ", possCond.value: " + possCond.value + ", currCond.value: " + currCond.value);
+										//Debug.Log ("LessThan - sv.value: " + sv.value + ", possCond.value: " + possCond.value + ", currCond.value: " + currCond.value);
 										res = ((int)possCond.value - (int)sv.value) > ((int)currCond.value - (int)sv.value);
 										break;
 									case CompareType.LessThanOrEqual:
-										Debug.Log ("LessThanOrEqual - sv.value: " + sv.value + ", possCond.value: " + possCond.value + ", currCond.value: " + currCond.value);
+										//Debug.Log ("LessThanOrEqual - sv.value: " + sv.value + ", possCond.value: " + possCond.value + ", currCond.value: " + currCond.value);
 										res = ((int)possCond.value - (int)sv.value) > ((int)currCond.value - (int)sv.value);
 										break;
 									case CompareType.MoreThan:
-										Debug.Log ("MoreThan - sv.value: " + sv.value + ", possCond.value: " + possCond.value + ", currCond.value: " + currCond.value);
+										//Debug.Log ("MoreThan - sv.value: " + sv.value + ", possCond.value: " + possCond.value + ", currCond.value: " + currCond.value);
 										res = ((int)possCond.value - (int)sv.value) < ((int)currCond.value - (int)sv.value);
 										break;
 									case CompareType.MoreThanOrEqual:
-										Debug.Log ("MoreThanOrEqual - sv.value: " + sv.value + ", possCond.value: " + possCond.value + ", currCond.value: " + currCond.value);
+										//Debug.Log ("MoreThanOrEqual - sv.value: " + sv.value + ", possCond.value: " + possCond.value + ", currCond.value: " + currCond.value);
 										res = ((int)possCond.value - (int)sv.value) < ((int)currCond.value - (int)sv.value);
 										break;
 									case CompareType.NotEqual:
-										Debug.Log ("NotEqual - sv.value: " + sv.value + ", possCond.value: " + possCond.value + ", currCond.value: " + currCond.value);
+										//Debug.Log ("NotEqual - sv.value: " + sv.value + ", possCond.value: " + possCond.value + ", currCond.value: " + currCond.value);
 										res = (Mathf.Abs ((int)sv.value - (int)currCond.value)) > (Mathf.Abs ((int)sv.value - (int)possCond.value));
 										break;
 									}
 
 									//if bool check if new matches while old doesnt
 								} else if (sv.value.GetType () == typeof(bool)) {
-									Debug.Log ("2");
+									//Debug.Log ("2");
 									//assuming booleans will only get ModificationType.Set
 									res = (sv.value != currCond.value && sv.value == possCond.value);
 								} else {
-									Debug.Log ("3");
+									//Debug.Log ("3");
 								}
 
 								//if new cond worse - return false
 								if (res == false) {
-									Debug.Log ("this Goal isnt any better! abort!");
+									//Debug.Log ("this Goal isnt any better! abort!");
 									return false;
 								}
 							}
@@ -227,9 +227,10 @@ namespace Ai.Goap {
 				} 
 			}
 			if (res == false) {
-				Debug.Log ("this Goal isnt any better! abort!");
+				//Debug.Log ("this Goal isnt any better! abort!");
 			} else {
-				Debug.Log ("this Goal is better!");}
+				//Debug.Log ("this Goal is better!");
+			}
 			return res;
 		}
 	}
@@ -295,7 +296,7 @@ namespace Ai.Goap {
 						newGoal.Add (k, possibleNewCond);
 					}
 				} else {
-					Debug.Log (k + " unchanged by this action. keep it as is in new goal.");
+					//Debug.Log (k + " unchanged by this action. keep it as is in new goal.");
 					Condition newCond = new Condition (goal [k].comparison, goal [k].value);
 					newGoal.Add (k, newCond);
 				}

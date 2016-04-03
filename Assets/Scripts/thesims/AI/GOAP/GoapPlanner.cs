@@ -42,7 +42,7 @@ namespace Ai.Goap
 				currentNode = openSet.Dequeue ();
 
 				//TODO: delete print
-				Debug.Log ("current world goal: " + GoapAgent.PrettyPrint(currentNode.goal));
+				//Debug.Log ("current world goal: " + GoapAgent.PrettyPrint(currentNode.goal));
 
 					
 
@@ -65,11 +65,11 @@ namespace Ai.Goap
 				foreach (GoapAction action in availableActions) {
 					
 					//TODO: delete print
-					Debug.Log("considering " + action.name);
+					//Debug.Log("considering " + action.name);
 
 					WorldGoal possibleChildGoal = action.reverseApplyToWorldGoal (currentNode.goal);
 
-					Debug.Log ("new goal will be: " + GoapAgent.PrettyPrint(possibleChildGoal));
+					//Debug.Log ("new goal will be: " + GoapAgent.PrettyPrint(possibleChildGoal));
 
 					if (agent.GetState().isGoalCloser(currentNode.goal, possibleChildGoal)) {
 
@@ -109,7 +109,7 @@ namespace Ai.Goap
 
 					//TODO: delete 'else' scope
 					else {
-						Debug.Log (action.name + " doesnt improve goal");
+						//Debug.Log (action.name + " doesnt improve goal");
 					}
 						
 				}
