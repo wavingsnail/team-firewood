@@ -19,6 +19,7 @@ public enum PointOfInterestType {
 	Creature, 
 	Mountain, 
 	MushroomsPile, 
+	Treasure
 }
 
 public class PointOfInterest : ActionTarget {

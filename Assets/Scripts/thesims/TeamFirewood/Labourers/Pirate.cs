@@ -12,7 +12,7 @@ namespace TeamFirewood {
 			//yoel: maybe this needs to be phrased differently (hasTool / hasTreasure / hasItem & greaterThan etc.)
 
 			//TODO: delete this goal: 
-			goal[Item.Advice.ToString()] = new Condition(CompareType.MoreThanOrEqual, 1);
+			goal[Item.Treasure.ToString()] = new Condition(CompareType.MoreThanOrEqual, 1);
 
 			//TODO: uncomment this goal:
 			worldGoal[this] = goal;
